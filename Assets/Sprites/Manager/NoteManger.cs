@@ -211,7 +211,7 @@ public class NoteManger : MonoBehaviour
             Debug.LogWarning("当前无音符");
             return;
         }
-        Debug.Log("删除音符：" + note.name);
+       // Debug.Log("删除音符：" + note.name);
         //删除List中当前音符
         CurentNoteListRemove(note);
         //删除场景中当前音符

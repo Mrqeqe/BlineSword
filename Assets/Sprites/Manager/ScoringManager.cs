@@ -43,7 +43,7 @@ public class ScoringManager : MonoBehaviour
     {
        
        
-            Debug.Log("连击");
+          //  Debug.Log("连击");
             UIScore.NumOfHits += 1;
          
     }
@@ -53,7 +53,7 @@ public class ScoringManager : MonoBehaviour
     public void InteruptBatterAction()
     {
         UIScore.NumOfHits = 0;
-        Debug.Log("中断连击");
+       // Debug.Log("中断连击");
     }
 
 
