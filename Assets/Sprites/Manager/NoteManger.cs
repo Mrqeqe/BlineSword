@@ -16,6 +16,9 @@ public class NoteManger : MonoBehaviour
     public Transform leftInsTrans;
     [Header("音符生成点：右")]
     public Transform rightInsTrans;
+    [Header("音符音效左右声道效果强度")]
+    [Range(0,1)]
+    public float steroPan = 0f;
     /// <summary>
     /// 音符种类枚举
     /// </summary>
@@ -61,44 +64,20 @@ public class NoteManger : MonoBehaviour
     {
        
         GameObject note = GetCurrentNote();                              //获取当前音符
-        if(note !=null)
+        if (note != null)
         {
             Kore_EventNodeData noteData = note.GetComponent<Kore_EventNodeData>();
-            switch (noteData.NoteType)       //判断音符种类
-            {
-                case NoteType.NormalNote: //触发普通音符逻辑
-                                          //判断是否按下正确按键
 
-
-                    //TODO:普通音符记分
-                    //销毁音符
-                    NoteBaseAction( noteData,  playerInput,  note);
-                    break;
-                case NoteType.LongNote:          //TODO:触发长音符逻辑
-                    break;
-                case NoteType.DemonsNote:     
-                        //TODO:心魔系统
-                  
-                    NoteBaseAction(noteData, playerInput, note);
-                 
-                    break;
-                case NoteType.DoubleNote:
-
-                    //TODO:双音符逻辑
-
-                    NoteBaseAction(noteData, playerInput, note);
-                    break;
-            }
+            NoteAction(noteData, playerInput, note);
         }
-        //判断得分
     }
 
     /// <summary>
-    /// 所有音符都具有的基本行为,判断点击时机，该次点击是否连击 更新所有UI值
+    /// 音符基本行为,判断点击时机，该次点击是否连击 更新所有UI值
     /// </summary>
     /// <param name="noteData"></param>
     /// <param name="playerInput"></param>
-    private void NoteBaseAction(Kore_EventNodeData noteData,InputManager.PlayerInput playerInput,GameObject note)
+    private void NoteAction(Kore_EventNodeData noteData,InputManager.PlayerInput playerInput,GameObject note)
     {
        
         if (IsRightKeyPress(noteData, playerInput))
@@ -139,21 +118,36 @@ public class NoteManger : MonoBehaviour
                 ScoringManager.Instance.InteruptBatterAction();
 
             }
-
         }
-       
     }
-
+    /// <summary>
+    /// 播放对应音效
+    /// </summary>
+    /// <param name="noteData">音符数据</param>
     private void PlayCorrespondAudio(Kore_EventNodeData noteData)
     {
+       
+        if(noteData.NoteInsPostion == Kore_EventNodeData.NotePostion.left)
+        {
+            steroPan = -0.8f;
+        }
+        else if(noteData.NoteInsPostion == Kore_EventNodeData.NotePostion.right)
+        {
+            steroPan = 0.8f;
+        }
         switch(noteData.SfxType)
         {
             case SFX_Type.Flash:
+                AudioManager.GetAudioSoure(AudioName.FlashSFX).panStereo = steroPan;
                 AudioManager.PlayAudio(AudioName.FlashSFX);
                 break;
-            case SFX_Type.Sword:AudioManager.PlayAudio(AudioName.SwordSFX);
+            case SFX_Type.Sword:
+                AudioManager.GetAudioSoure(AudioName.SwordSFX).panStereo = steroPan;
+                AudioManager.PlayAudio(AudioName.SwordSFX);
                 break;
-            case SFX_Type.Wood: AudioManager.PlayAudio(AudioName.WoodSFX);
+            case SFX_Type.Wood:
+                AudioManager.GetAudioSoure(AudioName.WoodSFX).panStereo = steroPan;
+                AudioManager.PlayAudio(AudioName.WoodSFX);
                 break;
         }
     }

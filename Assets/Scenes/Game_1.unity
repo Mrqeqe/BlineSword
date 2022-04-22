@@ -172,6 +172,7 @@ MonoBehaviour:
   eventID: FirstMusicTrack
   leftInsTrans: {fileID: 400554896}
   rightInsTrans: {fileID: 1292921841}
+  steroPan: 0.7
 --- !u!114 &67512759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,26 +452,31 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: f57dd263cc43aac48bef1ec7fca11300, type: 3}
     outputGroup: {fileID: -7564273883622646767, guid: 15f1facfa2ac4384dba9ca8d7dec97eb, type: 2}
     volume: 1
+    steroPan: 0
     playOnAwake: 0
     loop: 0
   - clip: {fileID: 8300000, guid: ca35f0578ed5d1947a635abbc17cfd69, type: 3}
     outputGroup: {fileID: -7564273883622646767, guid: 15f1facfa2ac4384dba9ca8d7dec97eb, type: 2}
     volume: 1
+    steroPan: 0
     playOnAwake: 0
     loop: 0
   - clip: {fileID: 8300000, guid: ea7af29acd7ea0c43a518ada5b14a862, type: 3}
     outputGroup: {fileID: -7564273883622646767, guid: 15f1facfa2ac4384dba9ca8d7dec97eb, type: 2}
     volume: 1
+    steroPan: 0
     playOnAwake: 0
     loop: 0
   - clip: {fileID: 8300000, guid: 3dbfc0e0baf1bcc479ba7746c260eefd, type: 3}
     outputGroup: {fileID: -7564273883622646767, guid: 15f1facfa2ac4384dba9ca8d7dec97eb, type: 2}
     volume: 1
+    steroPan: 0
     playOnAwake: 0
     loop: 0
   - clip: {fileID: 8300000, guid: b0bf28d52104f534388a2e082dccb051, type: 3}
     outputGroup: {fileID: -7564273883622646767, guid: 15f1facfa2ac4384dba9ca8d7dec97eb, type: 2}
     volume: 1
+    steroPan: 0
     playOnAwake: 0
     loop: 0
 --- !u!4 &398441981

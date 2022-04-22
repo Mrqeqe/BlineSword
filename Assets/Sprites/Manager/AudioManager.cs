@@ -23,7 +23,11 @@ public class AudioManager : MonoBehaviour
         [Header("音频音量")]
         [Range(0, 1)]
         public float volume = 1;
-
+        
+        [Header("左右声道")]
+        [Range(-1,1)]
+        public float steroPan = 0;
+        
         [Header("音频是否开局播放")]
         public bool playOnAwake = false;
 
@@ -49,7 +53,7 @@ public class AudioManager : MonoBehaviour
             instance = this;
             audiosDic = new Dictionary<string, AudioSource>();
         }
-       
+ 
     }
     private void Start()
     {
@@ -67,6 +71,7 @@ public class AudioManager : MonoBehaviour
             source.playOnAwake = sound.playOnAwake;
             source.loop = sound.loop;
             source.volume = sound.volume;
+            source.panStereo = sound.steroPan;
             source.outputAudioMixerGroup = sound.outputGroup;
             if(sound.playOnAwake)
             {
@@ -111,5 +116,22 @@ public class AudioManager : MonoBehaviour
             return;
         }
         instance.audiosDic[name].Stop();
+    }
+    /// <summary>
+    /// 获取音频源
+    /// </summary>
+    /// <param name="name">音频名称</param>
+    /// <returns></returns>
+    public static AudioSource GetAudioSoure(string name)
+    {
+        if(!instance.audiosDic.ContainsKey(name))
+        {
+            Debug.LogWarning($"名为{name}音频不存在");
+            return null;
+        }
+        else
+        {
+            return instance.audiosDic[name];
+        }
     }
 }

@@ -8,14 +8,7 @@ using UnityEngine;
 public class AudioName 
 {
 
-    /// <summary>
-    /// 完美点击音效
-    /// </summary>
-    public static string PerfectSFX { get => "PerfectSFX"; }
-    /// <summary>
-    /// 普通点击音效
-    /// </summary>
-    public static string NormalSFX { get => "NormalSFX"; }
+
     /// <summary>
     /// 闪避音效
     /// </summary>
