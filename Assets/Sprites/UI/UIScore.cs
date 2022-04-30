@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class UIScore : MonoBehaviour
 {
+    public Slider HP_slider;
+    public Slider SwordHeart_Slider;
+    public Image DemoMask_Image;
     [Header("UI分母，值必须下列大于任何数值，计算显示比例")]
     [SerializeField]
     private float maxUILength;
@@ -81,6 +84,7 @@ public class UIScore : MonoBehaviour
     /// </summary>
     public float PlayerScore { get => playerScore; set => playerScore = value; }
 
+
     private void Start()
     {
         UIScoreTrans = GetComponent<Transform>();
@@ -97,15 +101,11 @@ public class UIScore : MonoBehaviour
     /// </summary>
     private void InitializedUI()
     {
-        RectTransform HealthTrans = UIScoreTrans.GetChild(0).GetChild(1).GetComponent<RectTransform>();
-        HealthTrans.sizeDelta = new Vector2(HealthTrans.sizeDelta.x *(PlayerHealth/MaxUILength), HealthTrans.sizeDelta.y);
+        HP_slider.maxValue = playerHealth;
+        HP_slider.minValue = 0.0f;
+        SwordHeart_Slider.maxValue = 1.0f ;
+        SwordHeart_Slider.minValue = 0.0f;
 
-        RectTransform SwordheartscoreTrans = UIScoreTrans.GetChild(0).GetChild(2).GetComponent<RectTransform>();
-        SwordheartscoreTrans.sizeDelta = new Vector2(HealthTrans.sizeDelta.x * (PlayerHealth / MaxUILength), HealthTrans.sizeDelta.y);
-    
-        RectTransform HeartDemonScore = UIScoreTrans.GetChild(0).GetChild(3).GetComponent<RectTransform>();
-        HeartDemonScore.sizeDelta = new Vector2(HealthTrans.sizeDelta.x * (PlayerHealth / MaxUILength), HealthTrans.sizeDelta.y);
-    
     }
 
     /// <summary>
@@ -113,33 +113,48 @@ public class UIScore : MonoBehaviour
     /// </summary>
     private void UpdateUI()
     {
-        PlayerScoreUpdate();
+     
         PlayerHealthUpdate();
         SwordHeartScoreUpdate();
         HeartDemonScoreUpdate();
-        NumOfHitsUpdate();
+       
+     
     }
     private void PlayerScoreUpdate()
     {
         UIScoreTrans.GetChild(0).GetChild(4).GetComponent<Text>().text = "得分：" + playerScore;
     }
+    private bool canChangeHpGrewAnim = true;
+    private bool canChangeHpDownAnim = true;
     /// <summary>
     /// 更新玩家生命值
     /// </summary>
     private void PlayerHealthUpdate()
     {
+        Animator hpAnim = HP_slider.transform.GetChild(1).GetChild(0).GetComponent<Animator>();
         //TODO：更新玩家生命值
-        UIScoreTrans.GetChild(0).GetChild(1).GetChild(0).GetComponent<Image>().fillAmount = CurentPlayerHealth/PlayerHealth;
-      
-        
+       HP_slider.value = CurentPlayerHealth;
+      if(10*curentPlayerHealth <=4*playerHealth && 10 *curentPlayerHealth >=playerHealth&& canChangeHpGrewAnim)
+        {
+            hpAnim.SetBool("FireGrew", true);
+            canChangeHpGrewAnim = false;
+        }
+      else if(10 * curentPlayerHealth < playerHealth&& canChangeHpDownAnim )
+        {
+            hpAnim.SetBool("FireDown", true);
+            canChangeHpDownAnim = false;
+
+
+        }
     }
+   
     /// <summary>
     /// 更新剑心值，
     /// </summary>
     private void SwordHeartScoreUpdate()
     {
         //TODO:更新剑心值
-        UIScoreTrans.GetChild(0).GetChild(2).GetChild(0).GetComponent<Image>().fillAmount = CurentSwordHeartScore / SwordHeartScore;
+       SwordHeart_Slider.value = CurentSwordHeartScore / SwordHeartScore;
         
     }
     /// <summary>
@@ -147,8 +162,22 @@ public class UIScore : MonoBehaviour
     /// </summary>
     private void HeartDemonScoreUpdate()
     {
+        Animator demoAnim = DemoMask_Image.transform.GetChild(1).GetComponent<Animator>(); 
         //TODO:更新心魔值
-        UIScoreTrans.GetChild(0).GetChild(3).GetChild(0).GetComponent<Image>().fillAmount = CurentHeartDemonSCore / HeartDemonScore;
+        if (3*CurentHeartDemonSCore>heartDemonScore && 3 * CurentHeartDemonSCore <2*heartDemonScore)
+        {
+            demoAnim.SetBool("HalfHiddenEyes", true);
+            demoAnim.SetBool("OpeanEyes", false);
+        }
+        else if(3 * CurentHeartDemonSCore > 2 * heartDemonScore)
+        {
+            demoAnim.SetBool("OpeanEyes", true);
+            demoAnim.SetBool("HalfHiddenEyes", false);
+        }
+        else
+        {
+            demoAnim.SetBool("HalfHiddenEyes", false);
+        }
         
     }
     /// <summary>
