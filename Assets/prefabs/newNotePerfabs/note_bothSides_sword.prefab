@@ -391,13 +391,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4a20a435f852704a9e6fe5bbbb4cbea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Color: {r: 0, g: 0.5460277, b: 0.6509434, a: 0}
+  Color: {r: 0, g: 0.17476465, b: 0.8679245, a: 1}
   cirqueRadius: 5
-  cirqueBlurWidth: 0.74
-  cirqueSeperateDis: 0
-  cirqueWidth: 5
+  cirqueBlurWidth: 0.04
+  cirqueSeperateDis: 0.18
+  cirqueWidth: 3.8123748
   haloRadius: 5
-  haloBlurWidth: 7
+  haloBlurWidth: 2.31
   haloSeperateDis: 0
   blurAlpha: 0.117
 --- !u!114 &-3519527720462821959
