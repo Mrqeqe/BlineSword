@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4a20a435f852704a9e6fe5bbbb4cbea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Color: {r: 0, g: 0.17476465, b: 0.8679245, a: 1}
+  Color: {r: 0.8666667, g: 0.6770756, b: 0, a: 1}
   cirqueRadius: 5
   cirqueBlurWidth: 0.04
   cirqueSeperateDis: 0.18
