@@ -124,8 +124,7 @@ public class UIScore : MonoBehaviour
     {
         UIScoreTrans.GetChild(0).GetChild(4).GetComponent<Text>().text = "得分：" + playerScore;
     }
-    private bool canChangeHpGrewAnim = true;
-    private bool canChangeHpDownAnim = true;
+
     /// <summary>
     /// 更新玩家生命值
     /// </summary>
@@ -134,28 +133,47 @@ public class UIScore : MonoBehaviour
         Animator hpAnim = HP_slider.transform.GetChild(1).GetChild(0).GetComponent<Animator>();
         //TODO：更新玩家生命值
        HP_slider.value = CurentPlayerHealth;
-      if(10*curentPlayerHealth <=4*playerHealth && 10 *curentPlayerHealth >=playerHealth&& canChangeHpGrewAnim)
-        {
-            hpAnim.SetBool("FireGrew", true);
-            canChangeHpGrewAnim = false;
+       
+        if(10*curentPlayerHealth <=4*playerHealth && 10 *curentPlayerHealth >= playerHealth)
+        { 
+            hpAnim.SetBool("FireMinToGrew", true);
+            hpAnim.SetBool("FireGrewToMax", true);
+            hpAnim.SetBool("FireMaxToDown", false);
         }
-      else if(10 * curentPlayerHealth < playerHealth&& canChangeHpDownAnim )
+      else if(10 * curentPlayerHealth < playerHealth )
         {
-            hpAnim.SetBool("FireDown", true);
-            canChangeHpDownAnim = false;
-
-
+            hpAnim.SetBool("FireMaxToDown", true);
+            hpAnim.SetBool("FireDownToMin", true);
+            hpAnim.SetBool("FireMinToGrew", false);
+            hpAnim.SetBool("FireGrewToMax", false);
         }
     }
-   
+    /// <summary>
+    /// 控制剑柄动画播放
+    /// </summary>
+
     /// <summary>
     /// 更新剑心值，
     /// </summary>
     private void SwordHeartScoreUpdate()
     {
+        Animator SH_Anim = SwordHeart_Slider.transform.GetChild(1).GetChild(0).GetComponent<Animator>();
         //TODO:更新剑心值
        SwordHeart_Slider.value = CurentSwordHeartScore / SwordHeartScore;
-        
+        if(curentSwordHeartScore >= swordHeartScore)
+        {
+
+            SH_Anim.SetBool("ScabbardFalled", true);
+            SH_Anim.SetBool("ScabbardBackToIdel", false);
+            SH_Anim.SetBool("ScabbardBack", false);
+        }
+        if(curentSwordHeartScore<SwordHeartScore)
+        {
+            SH_Anim.SetBool("ScabbardBack",true);
+            SH_Anim.SetBool("ScabbardBackToIdel", true);
+            SH_Anim.SetBool("ScabbardFalled", false);
+
+        }
     }
     /// <summary>
     /// 更新心魔值

@@ -99,7 +99,7 @@ public class ScoringManager : MonoBehaviour
     /// <summary>
     /// »­³öÅÐ¶¨ÇøÓò
     /// </summary>
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmos()
     {
         if(leftPoint!=null&&rightPoint!=null)
         {
