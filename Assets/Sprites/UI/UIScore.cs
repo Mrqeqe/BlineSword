@@ -8,6 +8,7 @@ public class UIScore : MonoBehaviour
     public Slider HP_slider;
     public Slider SwordHeart_Slider;
     public Image DemoMask_Image;
+    public GameObject SwordFire;
     [Header("UI分母，值必须下列大于任何数值，计算显示比例")]
     [SerializeField]
     private float maxUILength;
@@ -117,8 +118,9 @@ public class UIScore : MonoBehaviour
         PlayerHealthUpdate();
         SwordHeartScoreUpdate();
         HeartDemonScoreUpdate();
-       
-     
+        NumOfHitsUpdate();
+
+
     }
     private void PlayerScoreUpdate()
     {
@@ -162,18 +164,20 @@ public class UIScore : MonoBehaviour
        SwordHeart_Slider.value = CurentSwordHeartScore / SwordHeartScore;
         if(curentSwordHeartScore >= swordHeartScore)
         {
-
+            SwordFire.gameObject.SetActive(true);
             SH_Anim.SetBool("ScabbardFalled", true);
             SH_Anim.SetBool("ScabbardBackToIdel", false);
             SH_Anim.SetBool("ScabbardBack", false);
         }
         if(curentSwordHeartScore<SwordHeartScore)
         {
+            SwordFire.gameObject.SetActive(false);
             SH_Anim.SetBool("ScabbardBack",true);
             SH_Anim.SetBool("ScabbardBackToIdel", true);
             SH_Anim.SetBool("ScabbardFalled", false);
 
         }
+        
     }
     /// <summary>
     /// 更新心魔值
@@ -198,21 +202,34 @@ public class UIScore : MonoBehaviour
         }
         
     }
+    private int curentNumOfhits = 0;
+ 
     /// <summary>
     /// 更新连击数
     /// </summary>
     private void NumOfHitsUpdate()
-    {   
-        if(NumOfHits >0)
-        {
-            UIScoreTrans.GetChild(0).GetChild(0).gameObject.SetActive(true);
-            UIScoreTrans.GetChild(0).GetChild(0).GetComponent<Text>().text = "连击数：" + NumOfHits;
-        }
-        else
-        {
-            UIScoreTrans.GetChild(0).GetChild(0).gameObject.SetActive(false);
-        }
+    {
+        float speed = 0.01f;
+
+        Camera MainCam = this.gameObject.GetComponent<Canvas>().worldCamera;
+
         
+        if (NumOfHits >=2 &&NumOfHits>curentNumOfhits)
+        {
+            float H, S, V = 0;
+            Color.RGBToHSV(MainCam.backgroundColor, out H, out S, out V);
+            
+            curentNumOfhits = numOfHits;
+            Debug.Log(Mathf.Clamp(V + NumOfHits * speed, 0.0f, 0.69f));
+           
+                MainCam.backgroundColor = Color.HSVToRGB(0.0f, 0.0f, Mathf.Clamp(V + speed, 0.0f, 0.69f));
+            
+            
+        }
+      
+      
+
+
     }
 
 

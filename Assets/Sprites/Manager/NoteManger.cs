@@ -194,7 +194,7 @@ public class NoteManger : MonoBehaviour
     }
 
     /// <summary>
-    /// 销毁当前音符
+    /// 销毁当前音符并执行一些操作
     /// </summary>
     public  void DestroyCurentNote()
     {
@@ -205,9 +205,11 @@ public class NoteManger : MonoBehaviour
             Debug.LogWarning("当前无音符");
             return;
         }
-       // Debug.Log("删除音符：" + note.name);
+       
+        // Debug.Log("删除音符：" + note.name);
         //删除List中当前音符
         CurentNoteListRemove(note);
+        
         //删除场景中当前音符
         Destroy(note);
     }

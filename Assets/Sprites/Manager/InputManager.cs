@@ -73,6 +73,29 @@ public class InputManager : MonoBehaviour
             OnMouseClicked.Invoke(playerInput);
             //Debug.Log("按下鼠标右键");
         }
-        
+
+        //左边按住同时右边按下或者右边按住左边按下或者左右同时按下
+        if (Input.GetKeyDown(KeyCode.F) && Input.GetKeyDown(KeyCode.J)
+            || Input.GetKeyDown(KeyCode.J) && Input.GetKeyDown(KeyCode.F)
+            || Input.GetKeyDown(KeyCode.F) && Input.GetKeyDown(KeyCode.J)
+           )
+        {
+            playerInput = PlayerInput.Mouseboth;
+            OnMouseClicked.Invoke(playerInput);
+            Debug.Log("鼠标左右同时按下");
+        }
+
+        else if (Input.GetKeyDown(KeyCode.F))
+        {
+            playerInput = PlayerInput.Mouseleft;
+            OnMouseClicked.Invoke(playerInput);
+            // Debug.Log("按下鼠标左键");
+        }
+        else if (Input.GetKeyDown(KeyCode.J))
+        {
+            playerInput = PlayerInput.Mouseright;
+            OnMouseClicked.Invoke(playerInput);
+            //Debug.Log("按下鼠标右键");
+        }
     }
 }
