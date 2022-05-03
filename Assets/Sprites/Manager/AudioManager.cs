@@ -116,6 +116,7 @@ public class AudioManager : MonoBehaviour
             return;
         }
         instance.audiosDic[name].Stop();
+        
     }
     /// <summary>
     /// ªÒ»°“Ù∆µ‘¥

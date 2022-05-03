@@ -8,14 +8,15 @@ public class GameStart : MonoBehaviour
     public GameObject notemanager;
     public GameObject MusicPlayer;
     public GameObject UI;
+    public GameObject InputMnagerGameObject;
+    public GameObject setingPanel;
     private int startTime=3;
     public Text startTimeText;
     private bool isGameStart = false;
     void Start()
     {
-        Invoke("UIActiveTrue",2);
-        
-  
+        Invoke("UIActiveTrue",1);
+
     }
 
     // Update is called once per frame
@@ -55,5 +56,7 @@ public class GameStart : MonoBehaviour
     {
         MusicPlayer.SetActive(true);
         notemanager.SetActive(true);
+        InputMnagerGameObject.SetActive(true);
+        setingPanel.SetActive(true);
     }
 }

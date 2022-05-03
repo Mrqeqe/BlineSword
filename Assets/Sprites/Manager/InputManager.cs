@@ -10,7 +10,7 @@ public class InputManager : MonoBehaviour
     /// 输入管理单例
     /// </summary>
     public static InputManager Instance { get; set; }
-
+    public bool isGamePause = false;
     /// <summary>
     /// 玩家输入状态枚举值
     /// </summary>
@@ -31,6 +31,7 @@ public class InputManager : MonoBehaviour
     /// </summary>
     public event Action<PlayerInput> OnMouseClicked;
 
+    public event Action<bool> OnGamePused;
     private void Awake()
     {
         if(Instance!=null)
@@ -39,10 +40,16 @@ public class InputManager : MonoBehaviour
         }
         Instance = this;
     }
-
+    
      void Update()
     {
-        PlayerAction();
+        PuseGame();
+        
+        if(!isGamePause)
+        {
+            PlayerAction();
+        }
+        
     }
 
     /// <summary>
@@ -96,6 +103,15 @@ public class InputManager : MonoBehaviour
             playerInput = PlayerInput.Mouseright;
             OnMouseClicked.Invoke(playerInput);
             //Debug.Log("按下鼠标右键");
+        }
+    }
+    private void PuseGame()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            isGamePause = !isGamePause;
+            OnGamePused.Invoke(isGamePause);
+            Debug.Log(isGamePause);
         }
     }
 }

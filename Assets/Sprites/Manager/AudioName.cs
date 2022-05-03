@@ -21,4 +21,8 @@ public class AudioName
     /// µ∂Ω£“Ù–ß
     /// </summary>
     public static string SwordSFX { get => "Sword"; }
+    /// <summary>
+    /// ±≥æ∞“Ù¿÷
+    /// </summary>
+    public static string BGM { get => "FirstMusic3.0"; }
 }
