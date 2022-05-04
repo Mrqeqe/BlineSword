@@ -295,7 +295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemBtn: {fileID: 0}
   itemImage: {fileID: 0}
-  itemIndex: 0
+  itemIndex: 1
 --- !u!1 &106837258
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,8 +330,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0043945312, y: 0.00030517578}
-  m_SizeDelta: {x: 2031.7, y: 1142.5}
+  m_AnchoredPosition: {x: -19.299805, y: -0.11550903}
+  m_SizeDelta: {x: 2597.7542, y: 1506.9407}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &106837260
 MonoBehaviour:
