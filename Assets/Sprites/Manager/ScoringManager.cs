@@ -11,10 +11,9 @@ public class ScoringManager : MonoBehaviour
     public float normalJugmentRange = 3.0f;
   
     [Header("UIScore对象")]
-
-
     public UIScore UIScore;
 
+    public Transform[] InsNoteTransList;
     /// <summary>
     /// 单例
     /// </summary>
@@ -114,6 +113,16 @@ public class ScoringManager : MonoBehaviour
         else
         {
             Debug.LogError("未获取到判定范围中心点");
+        }
+    }
+     void OnValidate()
+    {
+        Debug.Log("fjjj");
+        foreach (var item in InsNoteTransList)
+        {
+            item.GetChild(0).localScale = new Vector3(perfectJudgmentRange * 2, perfectJudgmentRange * 2, perfectJudgmentRange * 2);
+            item.GetChild(1).localScale = new Vector3(normalJugmentRange * 2, normalJugmentRange * 2, 0);
+           
         }
     }
 }

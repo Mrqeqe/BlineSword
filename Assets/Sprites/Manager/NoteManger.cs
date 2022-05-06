@@ -14,10 +14,7 @@ public class NoteManger : MonoBehaviour
     public string eventID;
 
     public Transform[] InsPostionList;
-    [Header("音符生成点：左")]
-    public Transform leftInsTrans;
-    [Header("音符生成点：右")]
-    public Transform rightInsTrans;
+
     [Header("音符音效左右声道效果强度")]
     [Range(0,1)]
     public float steroPan = 0f;
@@ -27,9 +24,9 @@ public class NoteManger : MonoBehaviour
     public enum NoteType
     {
         NormalNote,
-        LongNote,
+      
         DemonsNote,
-        DoubleNote,
+
     }
     public enum SFX_Type
     {

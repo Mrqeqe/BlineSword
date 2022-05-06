@@ -14,7 +14,7 @@ public class DoubleNote : MonoBehaviour
     void Start()
     {
         myTrans = GetComponent<Transform>();
-        distance = NoteManger.Instance.rightInsTrans.position.x - NoteManger.Instance.leftInsTrans.position.x;
+      //  distance = NoteManger.Instance.rightInsTrans.position.x - NoteManger.Instance.leftInsTrans.position.x;
         scoreControl = this.GetComponent<Control>();
         childControl = myTrans.GetChild(2).GetComponent<Control>();
         myTrans.GetChild(2).position = myTrans.GetChild(2).position + new Vector3(distance, 0, 0);

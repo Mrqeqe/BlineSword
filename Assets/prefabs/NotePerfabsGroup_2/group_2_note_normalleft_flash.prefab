@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4381925834575148527}
   - component: {fileID: 3681258813656443234}
   - component: {fileID: 1246199073189134507}
+  - component: {fileID: 393391221236557349}
   m_Layer: 0
   m_Name: group_2_note_normalleft_flash
   m_TagString: Untagged
@@ -82,7 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e05a1657e583ed640820c5c10d29d2dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteInsPostion: 7
+  noteInsPostion: 1
   noteType: 0
   sfxType: 2
   noteWithShinkSpeed: 0.7
@@ -98,6 +99,20 @@ MonoBehaviour:
   perfectSwordHeartScore: 10
   normalSwordHeartScore: 5
   heartDemoScore: 10
+--- !u!114 &393391221236557349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4381925834575148524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3f5bc25ea985944c8de1137b72fc157, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  perfectBg: {fileID: 8443539925129990815}
+  normalBg: {fileID: 8443539923174276949}
 --- !u!1 &4381925835635526778
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,7 +333,7 @@ Transform:
   m_GameObject: {fileID: 8443539923174276938}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.1}
-  m_LocalScale: {x: 1.1849, y: 1.1849, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 0}
   m_Children: []
   m_Father: {fileID: 4381925834575148526}
   m_RootOrder: 2
@@ -413,7 +428,7 @@ Transform:
   m_GameObject: {fileID: 8443539925129990812}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.1}
-  m_LocalScale: {x: 0.5574125, y: 0.5574125, z: 0.1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 4381925834575148526}
   m_RootOrder: 3
