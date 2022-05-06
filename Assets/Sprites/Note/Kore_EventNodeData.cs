@@ -9,8 +9,7 @@ public class Kore_EventNodeData : MonoBehaviour
     /// </summary>
    public  enum NotePostion
     {
-        left ,
-        right,
+        Pos_1=0,Pos_2=1,Pos_3=2,Pos_4=3,Pos_5=4,Pos_6=5,Pos_7=6,Pos_8=7,
     }
 
     [Header("判定与实际参数")]

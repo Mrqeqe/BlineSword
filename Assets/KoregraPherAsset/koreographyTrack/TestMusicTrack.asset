@@ -25,7 +25,7 @@ MonoBehaviour:
   _SerializedPayloadTypes:
   - SonicBloom.Koreo.AssetPayload
   _AssetPayloads:
-  - mAssetVal: {fileID: 4679784378318817591, guid: 56c4a9687acbdc14db39e1ac720466eb, type: 3}
+  - mAssetVal: {fileID: 4381925834575148524, guid: d66a1539d67228548be439601dac318e, type: 3}
   - mAssetVal: {fileID: 4679784378318817591, guid: a9e0d76731dd28d4884813f3d285242a, type: 3}
   - mAssetVal: {fileID: 4679784378318817591, guid: 7b99764e412015749890f73b2eba2162, type: 3}
   - mAssetVal: {fileID: 4679784378318817591, guid: ccdfee8ac91226d42a61ae15087fc731, type: 3}

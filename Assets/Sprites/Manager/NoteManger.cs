@@ -12,6 +12,8 @@ public class NoteManger : MonoBehaviour
     public  static NoteManger Instance { get; set; }
 
     public string eventID;
+
+    public Transform[] InsPostionList;
     [Header("音符生成点：左")]
     public Transform leftInsTrans;
     [Header("音符生成点：右")]
@@ -53,7 +55,7 @@ public class NoteManger : MonoBehaviour
 
      void Start()
      {
-        InputManager.Instance.OnMouseClicked += MouseClickedEventHandler;
+        InputManager.Instance.OnKeyPassed += MouseClickedEventHandler;
       
      }
     /// <summary>
@@ -127,11 +129,11 @@ public class NoteManger : MonoBehaviour
     private void PlayCorrespondAudio(Kore_EventNodeData noteData)
     {
        
-        if(noteData.NoteInsPostion == Kore_EventNodeData.NotePostion.left)
+        if(noteData.NoteInsPostion == Kore_EventNodeData.NotePostion.Pos_1)
         {
             steroPan = -0.8f;
         }
-        else if(noteData.NoteInsPostion == Kore_EventNodeData.NotePostion.right)
+        else if(noteData.NoteInsPostion == Kore_EventNodeData.NotePostion.Pos_2)
         {
             steroPan = 0.8f;
         }
@@ -159,27 +161,9 @@ public class NoteManger : MonoBehaviour
     /// <returns></returns>
     private bool IsRightKeyPress(Kore_EventNodeData noteData, InputManager.PlayerInput playerInput)
     {
-        if(noteData.NoteType == NoteType.DoubleNote)
-        {
-            
-            if (playerInput == InputManager.PlayerInput.Mouseboth)
-            {
-             
-                return true;
-              
-            }
-            else
-            {
-               
-                return false;
-            }
-         
-        }
-        else
-        {
-            if (noteData.NoteInsPostion == Kore_EventNodeData.NotePostion.left && playerInput == InputManager.PlayerInput.Mouseleft
-             || noteData.NoteInsPostion == Kore_EventNodeData.NotePostion.right && playerInput == InputManager.PlayerInput.Mouseright
-                )
+        
+        
+            if (((int)noteData.NoteInsPostion) == ((int)playerInput) )
             {
                 return true;
 
@@ -189,7 +173,7 @@ public class NoteManger : MonoBehaviour
                 return false;
             }
       
-        }
+    
        
     }
 
@@ -269,17 +253,10 @@ public class NoteManger : MonoBehaviour
         {
             
             GameObject notePerfab = koreoEvent.GetAssetValue() as GameObject;
-            if(notePerfab !=null)
+            if (notePerfab != null)
             {
-              
-                
-                Vector3 noteInsPostion = leftInsTrans.position;//默认为左边位置
-                if (notePerfab.GetComponent<Kore_EventNodeData>().NoteInsPostion == Kore_EventNodeData.NotePostion.right)
-                {
-                    noteInsPostion = rightInsTrans.position;
-                }
-
-                GameObject note = GameObject.Instantiate(notePerfab, noteInsPostion, Quaternion.identity);                   
+                int index = ((int)notePerfab.GetComponent<Kore_EventNodeData>().NoteInsPostion);
+                GameObject note = GameObject.Instantiate(notePerfab, InsPostionList[index].position, Quaternion.identity);                   
                 return note;
             }
             else
