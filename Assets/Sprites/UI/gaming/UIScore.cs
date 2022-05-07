@@ -8,7 +8,7 @@ public class UIScore : MonoBehaviour
     public Slider HP_slider;
     public Slider SwordHeart_Slider;
     public Image DemoMask_Image;
-    public GameObject SwordFire;
+   
     [Header("UI分母，值必须下列大于任何数值，计算显示比例")]
     [SerializeField]
     private float maxUILength;
@@ -150,9 +150,7 @@ public class UIScore : MonoBehaviour
             hpAnim.SetBool("FireGrewToMax", false);
         }
     }
-    /// <summary>
-    /// 控制剑柄动画播放
-    /// </summary>
+
 
     /// <summary>
     /// 更新剑心值，
@@ -164,14 +162,14 @@ public class UIScore : MonoBehaviour
        SwordHeart_Slider.value = CurentSwordHeartScore / SwordHeartScore;
         if(curentSwordHeartScore >= swordHeartScore)
         {
-            SwordFire.gameObject.SetActive(true);
+           
             SH_Anim.SetBool("ScabbardFalled", true);
             SH_Anim.SetBool("ScabbardBackToIdel", false);
             SH_Anim.SetBool("ScabbardBack", false);
         }
         if(curentSwordHeartScore<SwordHeartScore)
         {
-            SwordFire.gameObject.SetActive(false);
+           
             SH_Anim.SetBool("ScabbardBack",true);
             SH_Anim.SetBool("ScabbardBackToIdel", true);
             SH_Anim.SetBool("ScabbardFalled", false);
@@ -205,7 +203,7 @@ public class UIScore : MonoBehaviour
     private int curentNumOfhits = 0;
  
     /// <summary>
-    /// 更新连击数
+    /// 更新连击数反应状态
     /// </summary>
     private void NumOfHitsUpdate()
     {
@@ -221,8 +219,7 @@ public class UIScore : MonoBehaviour
             
             curentNumOfhits = numOfHits;
             Debug.Log(Mathf.Clamp(V + NumOfHits * speed, 0.0f, 0.69f));
-           
-                MainCam.backgroundColor = Color.HSVToRGB(0.0f, 0.0f, Mathf.Clamp(V + speed, 0.0f, 0.69f));
+           MainCam.backgroundColor = Color.HSVToRGB(0.0f, 0.0f, Mathf.Clamp(V + speed, 0.0f, 0.69f));
             
             
         }

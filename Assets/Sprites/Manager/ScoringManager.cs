@@ -9,7 +9,8 @@ public class ScoringManager : MonoBehaviour
     public float perfectJudgmentRange = 2.0f;
     [Header("普通判定范围线（绿）")]
     public float normalJugmentRange = 3.0f;
-  
+    [Header("判定区域背景开启/关闭")]
+    public bool ShowBackground =true;
     [Header("UIScore对象")]
     public UIScore UIScore;
 
@@ -117,12 +118,26 @@ public class ScoringManager : MonoBehaviour
     }
      void OnValidate()
     {
-        Debug.Log("fjjj");
+       
         foreach (var item in InsNoteTransList)
         {
-            item.GetChild(0).localScale = new Vector3(perfectJudgmentRange * 2, perfectJudgmentRange * 2, perfectJudgmentRange * 2);
-            item.GetChild(1).localScale = new Vector3(normalJugmentRange * 2, normalJugmentRange * 2, 0);
-           
+            
+            if(ShowBackground)
+            {
+                 item.GetChild(0).gameObject.SetActive(true);
+                 item.GetChild(1).gameObject.SetActive(true);
+                item.GetChild(2).gameObject.SetActive(true);
+                item.GetChild(0).localScale = new Vector3(perfectJudgmentRange * 2, perfectJudgmentRange * 2, perfectJudgmentRange * 2);
+                item.GetChild(1).localScale = new Vector3(normalJugmentRange * 2, normalJugmentRange * 2, 0);
+                item.GetChild(2).localScale = new Vector3(perfectJudgmentRange * 4, perfectJudgmentRange * 4, 1);
+            }
+            else
+            {
+                item.GetChild(0).gameObject.SetActive(false);
+                item.GetChild(1).gameObject.SetActive(false);
+                item.GetChild(2).gameObject.SetActive(false);
+                
+            }
         }
     }
 }
