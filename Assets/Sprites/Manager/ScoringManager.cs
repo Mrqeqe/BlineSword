@@ -13,6 +13,14 @@ public class ScoringManager : MonoBehaviour
     public bool ShowBackground =true;
     [Header("UIScore对象")]
     public UIScore UIScore;
+    [Header("是否开启震动")]
+    public bool OpeanShake = true;
+    [Header("屏幕震动时间")]
+    [Range(0,1)]
+    public float shakeDuration =0.5f;
+    [Header("屏幕震动幅度")]
+    [Range(0, 1)]
+    public float shakeStrength = 0.5f;
 
     public Transform[] InsNoteTransList;
     /// <summary>
@@ -27,13 +35,20 @@ public class ScoringManager : MonoBehaviour
         }
         Instance = this;
     }
+  
     private void Start()
     {
-
+       
+     
     }
+    private bool eventIsRisgested=false;
     private void Update()
     {
-
+        if (NoteManger.Instance != null&&!eventIsRisgested)
+        {
+            NoteManger.Instance.OnperfectBeat += CameraShake;
+            eventIsRisgested = true;
+        }
     }
 
     /// <summary>
@@ -116,6 +131,17 @@ public class ScoringManager : MonoBehaviour
             Debug.LogError("未获取到判定范围中心点");
         }
     }
+    /// <summary>
+    /// 屏幕震动
+    /// </summary>
+    private void CameraShake(Kore_EventNodeData data)
+    {
+        if(OpeanShake)
+        {
+            BeatSence.Instance.CameraShake(shakeDuration,shakeStrength);
+        }
+       
+    }
      void OnValidate()
     {
        
@@ -127,9 +153,9 @@ public class ScoringManager : MonoBehaviour
                  item.GetChild(0).gameObject.SetActive(true);
                  item.GetChild(1).gameObject.SetActive(true);
                 item.GetChild(2).gameObject.SetActive(true);
-                item.GetChild(0).localScale = new Vector3(perfectJudgmentRange * 2, perfectJudgmentRange * 2, perfectJudgmentRange * 2);
+                item.GetChild(0).localScale = new Vector3(perfectJudgmentRange * 2, perfectJudgmentRange * 2, 0.001f);
                 item.GetChild(1).localScale = new Vector3(normalJugmentRange * 2, normalJugmentRange * 2, 0);
-                item.GetChild(2).localScale = new Vector3(perfectJudgmentRange * 4, perfectJudgmentRange * 4, 1);
+                item.GetChild(2).localScale = new Vector3(perfectJudgmentRange * 5, perfectJudgmentRange * 5, perfectJudgmentRange * 5);
             }
             else
             {

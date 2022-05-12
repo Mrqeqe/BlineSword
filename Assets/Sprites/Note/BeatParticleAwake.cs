@@ -5,24 +5,23 @@ using UnityEngine;
 
 public class BeatParticleAwake : MonoBehaviour
 {
-    public int ID = 1;
+    private int _id = 1;
     void Start()
     {
         NoteManger.Instance.OnperfectBeat += PerfectBeatHandle;
+        _id = Convert.ToInt32(this.transform.parent.name) -1;
+        Debug.Log("º”‘ÿ¡£◊”" + _id);
     }
 
-    private void PerfectBeatHandle(Kore_EventNodeData.NotePostion NP)
+    private void PerfectBeatHandle(Kore_EventNodeData data)
     {
-        if(((int)NP) == ID)
+        if(((int)data.NoteInsPostion) == _id && data.SfxType == NoteManger.SFX_Type.Sword)
         {
-            GetComponent<ParticleSystem>().Play();
+            Debug.Log(data.SfxType);
+            this.transform.GetChild(0).GetComponent<ParticleSystem>().Play();
         }
        
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }

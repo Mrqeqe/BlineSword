@@ -14558,7 +14558,7 @@ GameObject:
   - component: {fileID: 1246199073189134507}
   - component: {fileID: 393391221236557349}
   m_Layer: 0
-  m_Name: group_2_note_normal_Pos_2_flash
+  m_Name: note_group_2_normal_Pos_2_flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14631,7 +14631,7 @@ MonoBehaviour:
   noteInsPostion: 1
   noteType: 0
   sfxType: 2
-  noteWithShinkSpeed: 0.7
+  noteWithShinkSpeed: 1
   noteSpeed: 3.1
   isFeadOut: 0
   transLineIn: 2
@@ -14878,7 +14878,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8443539923174276938}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.5}
   m_LocalScale: {x: 4, y: 4, z: 0}
   m_Children: []
   m_Father: {fileID: 4381925834575148526}
@@ -14973,8 +14973,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8443539925129990812}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.1}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.5}
+  m_LocalScale: {x: 2, y: 2, z: 0.3}
   m_Children: []
   m_Father: {fileID: 4381925834575148526}
   m_RootOrder: 3

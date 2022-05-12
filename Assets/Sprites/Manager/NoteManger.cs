@@ -15,7 +15,7 @@ public class NoteManger : MonoBehaviour
 
     public Transform[] InsPostionList;
 
-    public Action <Kore_EventNodeData.NotePostion> OnperfectBeat;
+    public Action <Kore_EventNodeData> OnperfectBeat;
     [Header("音符音效左右声道效果强度")]
     [Range(0,1)]
     public float steroPan = 0f;
@@ -93,6 +93,7 @@ public class NoteManger : MonoBehaviour
             //完美判断
             else if (ScoringManager.Instance.IsNoteInPerfectAera(note))
             {
+                OnperfectBeat.Invoke(noteData);
                 PlayCorrespondAudio(noteData);
                 ScoringManager.Instance.UIScore.CurentSwordHeartScore += noteData.PerfectSwordHeartScore;
                 ScoringManager.Instance.UIScore.PlayerScore += noteData.PerfectBeatScore;
@@ -163,7 +164,8 @@ public class NoteManger : MonoBehaviour
         
             if (((int)noteData.NoteInsPostion) == ((int)playerInput) )
             {
-                OnperfectBeat.Invoke( noteData.NoteInsPostion);
+               
+           
                 return true;
 
             }
@@ -257,7 +259,7 @@ public class NoteManger : MonoBehaviour
                 int index = ((int)notePerfab.GetComponent<Kore_EventNodeData>().NoteInsPostion);
                 GameObject note = GameObject.Instantiate(notePerfab, InsPostionList[index].position, Quaternion.identity);
                //唤起完美喷溅粒子
-                InsPostionList[index].GetChild(3).gameObject.SetActive(true);
+              InsPostionList[index].GetChild(3).gameObject.SetActive(true);
                 return note;
             }
             else
