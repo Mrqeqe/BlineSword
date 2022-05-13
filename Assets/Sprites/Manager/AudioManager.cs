@@ -84,7 +84,7 @@ public class AudioManager : MonoBehaviour
     /// 播放某一个音频
     /// </summary>
     /// <param name="name">音频名称</param>
-    /// <param name="isWait">是否等待音频播放完</param>
+    /// <param name="isWait">是否等待上一次本音频播放完</param>
     public static void PlayAudio(string name ,bool isWait = false)
     {
         if(!instance.audiosDic.ContainsKey(name))
