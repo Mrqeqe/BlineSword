@@ -16,6 +16,11 @@ public class StartSence : MonoBehaviour
     {
         if(Input.anyKeyDown )
         {
+
+            GameObject go = Instantiate(Resources.Load<GameObject>("RobLoad/RobLoadCanvas"));
+
+            go.GetComponent<SceneLoad>().TargetSceneName = ScenceName.scenceMain;
+            Destroy(this.gameObject);
             videoPlayer.Pause();
         }
         if(videoPlayer.isPaused)
