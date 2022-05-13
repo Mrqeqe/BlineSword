@@ -15,7 +15,7 @@ public class BeatParticleAwake : MonoBehaviour
 
     private void PerfectBeatHandle(Kore_EventNodeData data)
     {
-        if(((int)data.NoteInsPostion) == _id && data.SfxType == NoteManger.SFX_Type.Sword)
+        if(((int)data.NoteInsPostion) == _id)
         {
             Debug.Log(data.SfxType);
             this.transform.GetChild(0).GetComponent<ParticleSystem>().Play();

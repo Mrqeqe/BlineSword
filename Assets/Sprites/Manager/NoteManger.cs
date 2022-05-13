@@ -32,8 +32,12 @@ public class NoteManger : MonoBehaviour
     public enum SFX_Type
     {
         Sword,
-        Wood,
+        Hit,
         Flash,
+    }
+    public enum tone
+    {
+         do_1, re_2, mi_3, fa_4, sol_5, la_6, si_7
     }
     /// <summary>
     /// 存储当前已生成生成、未销毁的音符
@@ -139,16 +143,85 @@ public class NoteManger : MonoBehaviour
         switch(noteData.SfxType)
         {
             case SFX_Type.Flash:
-                AudioManager.GetAudioSoure(AudioName.FlashSFX).panStereo = steroPan;
-                AudioManager.PlayAudio(AudioName.FlashSFX);
+               switch(noteData.NoteTone)
+                {
+                    case tone.do_1:
+                        AudioManager.PlayAudio(AudioName.Flash_1);
+                        break;
+                    case tone.re_2:
+                        AudioManager.PlayAudio(AudioName.Flash_2);
+                        break;
+                    case tone.mi_3:
+                        AudioManager.PlayAudio(AudioName.Flash_3);
+                        break;
+                    case tone.fa_4:
+                        AudioManager.PlayAudio(AudioName.Flash_4);
+                        break;
+                    case tone.sol_5:
+                        AudioManager.PlayAudio(AudioName.Flash_5);
+                        break;
+                    case tone.la_6:
+                        AudioManager.PlayAudio(AudioName.Flash_6);
+                        break;
+                    case tone.si_7:
+                        AudioManager.PlayAudio(AudioName.Flash_7);
+                        break;
+
+                }
                 break;
             case SFX_Type.Sword:
-                AudioManager.GetAudioSoure(AudioName.SwordSFX).panStereo = steroPan;
-                AudioManager.PlayAudio(AudioName.SwordSFX);
+
+                switch (noteData.NoteTone)
+                {
+                    case tone.do_1:
+                        Debug.Log("播放");
+                        AudioManager.PlayAudio(AudioName.Sword_1);
+                        break;                           
+                    case tone.re_2:                      
+                        AudioManager.PlayAudio(AudioName.Sword_2);
+                        break;                           
+                    case tone.mi_3:                      
+                        AudioManager.PlayAudio(AudioName.Sword_3);
+                        break;                           
+                    case tone.fa_4:                      
+                        AudioManager.PlayAudio(AudioName.Sword_4);
+                        break;                           
+                    case tone.sol_5:                      
+                        AudioManager.PlayAudio(AudioName.Sword_5);
+                        break;                           
+                    case tone.la_6:                      
+                        AudioManager.PlayAudio(AudioName.Sword_6);
+                        break;
+                    case tone.si_7:
+                        AudioManager.PlayAudio(AudioName.Sword_7);
+                        break;
+                }
                 break;
-            case SFX_Type.Wood:
-                AudioManager.GetAudioSoure(AudioName.WoodSFX).panStereo = steroPan;
-                AudioManager.PlayAudio(AudioName.WoodSFX);
+            case SFX_Type.Hit:
+                switch (noteData.NoteTone)
+                {
+                    case tone.do_1:
+                        AudioManager.PlayAudio(AudioName.Hit_1);
+                        break;
+                    case tone.re_2:
+                        AudioManager.PlayAudio(AudioName.Hit_2);
+                        break;
+                    case tone.mi_3:
+                        AudioManager.PlayAudio(AudioName.Hit_3);
+                        break;
+                    case tone.fa_4:
+                        AudioManager.PlayAudio(AudioName.Hit_4);
+                        break;
+                    case tone.sol_5:
+                        AudioManager.PlayAudio(AudioName.Hit_5);
+                        break;
+                    case tone.la_6:
+                        AudioManager.PlayAudio(AudioName.Hit_6);
+                        break;
+                    case tone.si_7:
+                        AudioManager.PlayAudio(AudioName.Hit_7);
+                        break;
+                }
                 break;
         }
     }

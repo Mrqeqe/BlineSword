@@ -218,7 +218,7 @@ public class UIScore : MonoBehaviour
             Color.RGBToHSV(MainCam.backgroundColor, out H, out S, out V);
             
             curentNumOfhits = numOfHits;
-            Debug.Log(Mathf.Clamp(V + NumOfHits * speed, 0.0f, 0.69f));
+           // Debug.Log(Mathf.Clamp(V + NumOfHits * speed, 0.0f, 0.69f));
            MainCam.backgroundColor = Color.HSVToRGB(0.0f, 0.0f, Mathf.Clamp(V + speed, 0.0f, 0.69f));
             
             

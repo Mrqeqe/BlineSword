@@ -14630,7 +14630,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noteInsPostion: 1
   noteType: 0
-  sfxType: 0
+  sfxType: 1
+  noteTone: 3
   noteWithShinkSpeed: 1
   noteSpeed: 3.1
   isFeadOut: 0

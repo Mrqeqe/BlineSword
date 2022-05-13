@@ -25,6 +25,10 @@ public class Kore_EventNodeData : MonoBehaviour
     [SerializeField]
     private NoteManger.SFX_Type sfxType;
 
+    [Tooltip("音效音调")]
+    [SerializeField]
+    private NoteManger.tone noteTone;
+
     [Tooltip("初始音符宽度缩小速度")]
     [SerializeField]
     private float noteWithShinkSpeed =0.7f;    
@@ -145,6 +149,10 @@ public class Kore_EventNodeData : MonoBehaviour
     /// 是否开器淡出效果
     /// </summary>
     public bool IsFeadOut { get => isFeadOut; set => isFeadOut = value; }
+    /// <summary>
+    /// 音调种类
+    /// </summary>
+    public NoteManger.tone NoteTone { get => noteTone; set => noteTone = value; }
 
     private void OnDrawGizmosSelected()
     {

@@ -15,12 +15,24 @@ public class ScoringManager : MonoBehaviour
     public UIScore UIScore;
     [Header("是否开启震动")]
     public bool OpeanShake = true;
-    [Header("屏幕震动时间")]
+    [Header("Sword屏幕震动时间")]
     [Range(0,1)]
-    public float shakeDuration =0.5f;
-    [Header("屏幕震动幅度")]
+    public float swordShakeDuration =0.5f;
+    [Header("Sword屏幕震动幅度")]
     [Range(0, 1)]
-    public float shakeStrength = 0.5f;
+    public float swordShakeStrength = 0.5f;
+    [Header("Flash屏幕震动时间")]
+    [Range(0,1)]
+    public float flashShakeDuration =0.5f;
+    [Header("Flash屏幕震动幅度")]
+    [Range(0, 1)]
+    public float flashShakeStrength = 0.5f;
+    [Header("Hit屏幕震动时间")]
+    [Range(0,1)]
+    public float hitShakeDuration =0.5f;
+    [Header("Hit屏幕震动幅度")]
+    [Range(0, 1)]
+    public float hitShakeStrength = 0.5f;
 
     public Transform[] InsNoteTransList;
     /// <summary>
@@ -138,7 +150,15 @@ public class ScoringManager : MonoBehaviour
     {
         if(OpeanShake)
         {
-            BeatSence.Instance.CameraShake(shakeDuration,shakeStrength);
+            switch(data.SfxType)
+            {
+                case NoteManger.SFX_Type.Sword: BeatSence.Instance.CameraShake(swordShakeDuration, swordShakeStrength);
+                    break;
+                case NoteManger.SFX_Type.Hit:BeatSence.Instance.CameraShake(hitShakeDuration, hitShakeStrength);
+                    break;
+                case NoteManger.SFX_Type.Flash:BeatSence.Instance.CameraShake(flashShakeDuration, flashShakeStrength);
+                    break;
+            }
         }
        
     }

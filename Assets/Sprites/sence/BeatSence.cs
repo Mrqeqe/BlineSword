@@ -28,6 +28,11 @@ public class BeatSence : MonoBehaviour
     {
         
     }
+    /// <summary>
+    /// 屏幕震动
+    /// </summary>
+    /// <param name="duration">持续时间</param>
+    /// <param name="strength">强度</param>
     public void CameraShake(float duration ,float strength)
     {
         StartCoroutine(ShakeCamera(duration,strength));
