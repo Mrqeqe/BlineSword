@@ -17,6 +17,7 @@ public class Exit : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             exitImage.gameObject.SetActive(true);
+            Debug.LogWarning("myparent" + transform.name);
         }
     }
     public void ExitGame()

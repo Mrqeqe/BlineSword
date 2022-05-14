@@ -10,6 +10,7 @@ public class GameStart : MonoBehaviour
     public GameObject UI;
     public GameObject InputMnagerGameObject;
     public GameObject setingPanel;
+    public Text markedWords;
     private int startTime=3;
     public Text startTimeText;
     private bool isGameStart = false;
@@ -20,29 +21,31 @@ public class GameStart : MonoBehaviour
 
     }
     private bool startVideo =true;
-
+    private bool endVideo = false;
     // Update is called once per frame
     void Update()
     {
        
         if (startVideo)
         {
-            VideoManager.DisplayFedIn();
+            //VideoManager.DisplayFedIn();
             VideoManager.PlayVideo(VideoName.Start);
             startVideo = false;
 
           
         }
-        Debug.Log(VideoManager.VideoIsPlaying(VideoName.Start));
-        if(VideoManager.VideoIsPaused(VideoName.Start))
+        
+        //当视频还剩4s时淡出
+        if (VideoManager.Instance.curentTime >= VideoManager.Instance.videoTime - 4&&!endVideo||Input.GetKeyDown(KeyCode.Escape))
         {
-
+            markedWords.gameObject.SetActive(false);
+            Debug.LogWarning("当前" + VideoManager.Instance.curentTime);
             VideoManager.DisplayFedOut();
+            endVideo = true;
             Invoke("StopVideo", 2);
             Invoke("UIActiveTrue", 1);
           
         }
-
         CountDown();
     }
     private void  StopVideo()
@@ -60,7 +63,7 @@ public class GameStart : MonoBehaviour
         }
         if (!isGameStart && startTime < 0)
         {
-            Debug.Log("时间到了");
+          
             StartGame();
             isGameStart = true;
         }
@@ -72,7 +75,6 @@ public class GameStart : MonoBehaviour
     {
         UI.SetActive(true);
         StartCoroutine(ChangeStartTime());
-       
     }
     /// <summary>
     /// 开始倒计时
@@ -84,7 +86,17 @@ public class GameStart : MonoBehaviour
         {
           
             Debug.Log("staritTime" + startTime);
-            startTimeText.text = startTime + "";
+            switch(startTime)
+            {
+                case 3: startTimeText.text = "叁";
+                    break; 
+                case 2: startTimeText.text = "贰";
+                    break;
+                case 1: startTimeText.text = "壹";
+                    break;
+                case 0: startTimeText.text = "起";
+                    break;
+            }
             yield return new WaitForSeconds(1);
             startTime--;
         }

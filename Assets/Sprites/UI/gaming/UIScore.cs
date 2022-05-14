@@ -8,7 +8,7 @@ public class UIScore : MonoBehaviour
     public Slider HP_slider;
     public Slider SwordHeart_Slider;
     public Image DemoMask_Image;
-   
+    public Text PlayerScore_Text;
     [Header("UI分母，值必须下列大于任何数值，计算显示比例")]
     [SerializeField]
     private float maxUILength;
@@ -119,12 +119,12 @@ public class UIScore : MonoBehaviour
         SwordHeartScoreUpdate();
         HeartDemonScoreUpdate();
         NumOfHitsUpdate();
-
+        PlayerScoreUpdate();
 
     }
     private void PlayerScoreUpdate()
     {
-        UIScoreTrans.GetChild(0).GetChild(4).GetComponent<Text>().text = "得分：" + playerScore;
+        PlayerScore_Text.text = "得分：" + playerScore;
     }
 
     /// <summary>
