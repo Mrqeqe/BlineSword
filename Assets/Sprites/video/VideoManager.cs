@@ -53,30 +53,48 @@ public class VideoManager : MonoBehaviour
         if (!Instance._videoDic.ContainsKey(name))
         {
             Debug.LogWarning("该视频不存在");
-           
+            return;
         }
         Instance._videoDic[name].videoPlayer.clip = Instance._videoDic[name].videoClip;
         Instance._videoDic[name].videoPlayer.Play();
     }
+    /// <summary>
+    /// 屏幕淡出
+    /// </summary>
     public static void DisplayFedOut()
     {
       
         Instance.gameObject.GetComponent<Animator>().SetTrigger("FedOut");
        
     }
+    /// <summary>
+    /// 屏幕淡入
+    /// </summary>
     public static void DisplayFedIn()
     {
         Instance.gameObject.GetComponent<Animator>().SetTrigger("FedIn");
     }
-    private void Update()
+   
+    public static void StopVideo (string name)
     {
-        if(Input.GetKeyDown(KeyCode.K))
+        if (!Instance._videoDic.ContainsKey(name))
         {
-            VideoManager.PlayVideo("start");
+            Debug.LogWarning("该视频不存在");
+            return;
         }
-        if(Input.GetKeyDown(KeyCode.Space))
+        Instance._videoDic[name].videoPlayer.Stop();
+    }
+    public static bool VideoIsPlaying(string name)
+    {
+        if(!Instance._videoDic.ContainsKey(name))
         {
-            DisplayFedOut();
+            Debug.LogWarning("该视频不存在");
+            return false;
         }
+       return Instance._videoDic[name].videoPlayer.isPlaying;
+    }
+    public static bool VideoIsPaused(string name)
+    {
+        return Instance._videoDic[name].videoPlayer.isPaused;
     }
 }

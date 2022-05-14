@@ -55777,7 +55777,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 0}
+  sharedProfile: {fileID: 11400000, guid: b7d5ce3891b18f244bbb86dad8070ad4, type: 2}
   isGlobal: 0
   blendDistance: 0
   weight: 1
@@ -76798,7 +76798,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1749206096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86903,7 +86903,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798954776}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 05f4e351d4da722428c6fad96e0dc9ae, type: 3}
+  m_VideoClip: {fileID: 0}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 963194227}
@@ -132364,7 +132364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 0}
+  sharedProfile: {fileID: 11400000, guid: b7d5ce3891b18f244bbb86dad8070ad4, type: 2}
   isGlobal: 1
   blendDistance: 0
   weight: 1
