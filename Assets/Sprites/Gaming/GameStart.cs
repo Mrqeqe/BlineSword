@@ -10,6 +10,7 @@ public class GameStart : MonoBehaviour
     public GameObject UI;
     public GameObject InputMnagerGameObject;
     public GameObject setingPanel;
+    public GameObject GameEnd;
     public Text markedWords;
     private int startTime=3;
     public Text startTimeText;
@@ -112,5 +113,6 @@ public class GameStart : MonoBehaviour
         notemanager.SetActive(true);
         InputMnagerGameObject.SetActive(true);
         setingPanel.SetActive(true);
+        GameEnd.SetActive(true);
     }
 }

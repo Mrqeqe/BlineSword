@@ -5,7 +5,7 @@ using UnityEngine;
 public class ReturnMainSence : MonoBehaviour
 {
    
-    public void ReturnMainSenceLoad()
+    public static void ReturnMainSenceLoad()
     {
 
         GameObject go = Instantiate(Resources.Load<GameObject>("RobLoad/RobLoadCanvas"));
