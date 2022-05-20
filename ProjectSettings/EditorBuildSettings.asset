@@ -27,6 +27,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Game_5.unity
     guid: 59f6464f3b9b18e43a8d17bbad607659
   - enabled: 0
-    path: Assets/Scenes/Game_6.unity
+    path: Assets/Scenes/MadePrefabs.unity
     guid: 68eb3b2b7517b364195538e26ce9d775
   m_configObjects: {}
