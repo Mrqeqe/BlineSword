@@ -9,9 +9,7 @@ public class UIScore : MonoBehaviour
     public Slider SwordHeart_Slider;
     public Image DemoMask_Image;
     public Text PlayerScore_Text;
-    [Header("UI分母，值必须下列大于任何数值，计算显示比例")]
-    [SerializeField]
-    private float maxUILength;
+    public GameObject leaves;
 
     [Header("玩家血量")]
     [SerializeField]
@@ -40,16 +38,17 @@ public class UIScore : MonoBehaviour
     [Header("连击数")]
     [SerializeField]
     private int numOfHits;
+    [Header("出现竹叶的连击数")]
+    public int numToLeaves;
+    [Header("出现花瓣的连击数")]
+    public int numToPetal;
 
     [Header("玩家得分")]
     [SerializeField]
     private float playerScore;
     
     private Transform UIScoreTrans;
-    /// <summary>
-    /// UI分母，用于计算显示比例
-    /// </summary>
-    private float MaxUILength { get => maxUILength; set => maxUILength = value; }
+
 
     /// <summary>
     /// 玩家血量
@@ -219,14 +218,12 @@ public class UIScore : MonoBehaviour
             
             curentNumOfhits = numOfHits;
            // Debug.Log(Mathf.Clamp(V + NumOfHits * speed, 0.0f, 0.69f));
-           MainCam.backgroundColor = Color.HSVToRGB(0.0f, 0.0f, Mathf.Clamp(V + speed, 0.0f, 0.69f));
-            
-            
+           MainCam.backgroundColor = Color.HSVToRGB(0.0f, 0.0f, Mathf.Clamp(V + speed, 0.0f, 0.69f)); 
         }
-      
-      
-
-
+        if(NumOfHits >=numToLeaves)
+        {
+            leaves.SetActive(true);
+        }
     }
 
 

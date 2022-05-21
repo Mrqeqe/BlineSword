@@ -9,7 +9,7 @@ public class GameEnd : MonoBehaviour
     public GameObject DeathImage;
     private double audioTime = 99999.0;
     private double currentTime = 0.0;
-    private double reduceVolue = 3;
+    public  double reduceVolue = 3;
     private bool isDead = false;
     void Start()
     {
@@ -37,11 +37,11 @@ public class GameEnd : MonoBehaviour
             StopEndVideo = true;
             Invoke("StopVideo", 2);
             Invoke("UIActiveTrue", 1);
-
+            ReturnMain();
         }
 
         IsDeath();
-        ReturnMain();
+      
     }
     private void IsDeath()
     {
@@ -51,13 +51,17 @@ public class GameEnd : MonoBehaviour
             DeathImage.SetActive(true);
             Debug.Log("ËÀ");
             isDead = true;
+            if(Input.GetKeyDown(KeyCode.Space))
+            {
+                ReturnMain();
+            }
         }
     }
     private void ReturnMain()
     {
-        if (Input.GetKeyDown(KeyCode.Space)&&isDead)
-        {
+        
+            Debug.Log("Ìø×ªÖ÷³¡¾°");
             ReturnMainSence.ReturnMainSenceLoad();
-        }
+        
     }
 }

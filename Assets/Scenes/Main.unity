@@ -2129,6 +2129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoCenterView: {fileID: 453783297}
+  SenceCount: 2
 --- !u!4 &1812586427
 Transform:
   m_ObjectHideFlags: 0
