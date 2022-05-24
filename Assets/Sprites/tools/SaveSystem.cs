@@ -17,6 +17,7 @@ namespace SaveTools
             
                 try
                 {
+                Debug.Log(json);
                     File.WriteAllText(path, json);
                     Debug.Log("³É¹¦´æ´¢");
                     Debug.Log(path);

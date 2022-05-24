@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEditor;
 using SaveTools;
 public class PlayerData : MonoBehaviour
-{
+{ 
+    
+    public int SenceNunber;
     public static PlayerData Instance { get; set; }
     private void Awake()
     {
@@ -21,34 +23,55 @@ public class PlayerData : MonoBehaviour
     { get; set; }
 
     const string PLAYER_DATA_KEY = "PlayerData";
-   const string PLAYER_DATA_FILE_NAME = "PlayerData.Mrqe";
+   const string PLAYER_DATA_FILE_NAME = "PlayerData";
 
-    private SaveData SavingData()
+    private DataList SavingData()
     {
         var saveData = new SaveData();
         saveData.heartDemonScore    =      ScoringManager.Instance.UIScore.CurentHeartDemonSCore;
         saveData.playerHealth       =   ScoringManager.Instance.UIScore.CurentPlayerHealth;
         saveData.swordHeartScore     =   ScoringManager.Instance.UIScore.CurentSwordHeartScore;
         saveData.numOfHits          =   ScoringManager.Instance.UIScore.NumOfHits;
-        return saveData;
-    }
-    private void LoadingData(SaveData saveData)
-    {
 
-        ScoringManager.Instance.UIScore.CurentHeartDemonSCore = saveData.heartDemonScore;
-        ScoringManager.Instance.UIScore.CurentPlayerHealth = saveData.playerHealth;
-        ScoringManager.Instance.UIScore.CurentSwordHeartScore = saveData.swordHeartScore;
-        ScoringManager.Instance.UIScore.NumOfHits = saveData.numOfHits;
-      
+        DataList  datalist= LoadFromJson();
+        if(datalist == null)
+        {
+            Debug.Log("存储列表为空");
+            datalist = new DataList();
+            for (int i = 0; i < SenceNunber; i++)
+            {
+                datalist.dataList.Add(new SaveData());
+            }
+            datalist.dataList.Add(saveData);
+
+        }
+        else if (datalist.dataList.Count-1<SenceNunber )
+        {
+            Debug.Log("存储列表长度不足");
+            for (int i = datalist.dataList.Count - 1; i < SenceNunber-1; i++)
+            {
+                datalist.dataList.Add(new SaveData());
+            }
+            datalist.dataList.Add ( saveData);
+            Debug.Log(datalist.dataList[0].ToString());
+        }
+        else
+        {
+            Debug.Log("覆盖数据");
+            datalist.dataList[SenceNunber] = saveData;
+        }
+       
+        return datalist;
     }
+    
     public  void SaveByJson()
     {
         SaveSystem.SaveByJson(PLAYER_DATA_FILE_NAME, SavingData());
     }
-    public  SaveData LoadFromJson()
+    public DataList LoadFromJson()
     {
-       var saveData= SaveSystem.LoadFromJson<SaveData>(PLAYER_DATA_FILE_NAME);
-        SavePlayerData = saveData;
+       var saveData= SaveSystem.LoadFromJson<DataList>(PLAYER_DATA_FILE_NAME);
+
         return saveData;
     }
     [MenuItem("CustomerTools/delet Player Data")]
@@ -57,11 +80,17 @@ public class PlayerData : MonoBehaviour
         SaveSystem.DeleteSaveFile(PLAYER_DATA_FILE_NAME);
     }
 }   
+   
+public class DataList
+{
     
+    [SerializeField]public  List<SaveData> dataList = new List<SaveData>();
+}
 [System.Serializable]
 public class SaveData
 {
 
+    
     [SerializeField]
     public float playerHealth;
 
