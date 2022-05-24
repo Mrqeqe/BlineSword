@@ -7,6 +7,7 @@ public class GameEnd : MonoBehaviour
     public AudioSource KereAudioSource;
     public GameObject UI;
     public GameObject DeathImage;
+    
     private double audioTime = 99999.0;
     private double currentTime = 0.0;
     public  double reduceVolue = 3;
@@ -31,7 +32,7 @@ public class GameEnd : MonoBehaviour
         }
         if (VideoManager.Instance.curentTime >= VideoManager.Instance.videoTime - 4 && !StopEndVideo || Input.GetKeyDown(KeyCode.Escape))
         {
-
+            PlayerData.Instance.SaveByJson();//¥Êµµ
             Debug.LogWarning("µ±«∞" + VideoManager.Instance.curentTime);
             VideoManager.DisplayFedOut();
             StopEndVideo = true;
@@ -51,6 +52,7 @@ public class GameEnd : MonoBehaviour
             DeathImage.SetActive(true);
             Debug.Log("À¿");
             isDead = true;
+            PlayerData.Instance.SaveByJson();//¥Êµµ
             if(Input.GetKeyDown(KeyCode.Space))
             {
                 ReturnMain();

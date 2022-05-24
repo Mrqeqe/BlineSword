@@ -10,7 +10,7 @@ public class UIScore : MonoBehaviour
     public Image DemoMask_Image;
     public Text PlayerScore_Text;
     public GameObject leaves;
-
+    public GameObject potal;
     [Header("Íæ¼ÒÑªÁ¿")]
     [SerializeField]
     private float playerHealth;
@@ -223,6 +223,10 @@ public class UIScore : MonoBehaviour
         if(NumOfHits >=numToLeaves)
         {
             leaves.SetActive(true);
+        }
+        if(NumOfHits >= numToPetal)
+        {
+            potal.SetActive(true);
         }
     }
 
