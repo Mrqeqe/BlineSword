@@ -10,11 +10,14 @@ public class ShowPlayerDemo : MonoBehaviour
     private List<SaveData> saveData;
     void Start()
     {
-        if(saveData !=null)
+        try
         {
             saveData = PlayerData.Instance.LoadFromJson().dataList;
         }
-      
+        catch(System.Exception e)
+        {
+            Debug.Log("�޴浵");
+        }
     }
 
 

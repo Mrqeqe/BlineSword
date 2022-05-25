@@ -44,7 +44,7 @@ namespace SaveTools
                  {
                     var json = File.ReadAllText(path);
                     var data = JsonUtility.FromJson<T>(json);
-                    Debug.Log("读取成功");
+                    Debug.Log("读取成功"+ json);
                     return data;
                 }
                 catch(System.Exception e)

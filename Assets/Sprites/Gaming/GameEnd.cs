@@ -81,11 +81,13 @@ public class GameEnd : MonoBehaviour
     private void ShowScorePanel()
     {
         ScorePanel.SetActive(true);
-        Text heartSwordText = ScorePanel.transform.GetChild(1).GetChild(1).GetComponent<Text>();
-        Text scoreText = ScorePanel.transform.GetChild(2).GetChild(1).GetComponent<Text>();
-        Text heartDemo = ScorePanel.transform.GetChild(3).GetChild(1).GetComponent<Text>();
-        heartSwordText.text = "剑心：" + ScoringManager.Instance.UIScore.CurentSwordHeartScore;
-        scoreText.text = "得分：" + ScoringManager.Instance.UIScore.PlayerScore;
-        heartDemo.text = "心魔：" + ScoringManager.Instance.UIScore.CurentHeartDemonSCore;
+         ScorePanel.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = "剑心：" + ScoringManager.Instance.UIScore.CurentSwordHeartScore;
+         ScorePanel.transform.GetChild(2).GetChild(1).GetComponent<Text>().text = "得分：" + ScoringManager.Instance.UIScore.PlayerScore;
+         ScorePanel.transform.GetChild(3).GetChild(1).GetComponent<Text>().text = "心魔：" + ScoringManager.Instance.UIScore.CurentHeartDemonSCore;
+         ScorePanel.transform.GetChild(4).GetChild(1).GetComponent<Text>().text = "连击：" + ScoringManager.Instance.UIScore.NumOfHits;
+
+       
+       
+       
     }
 }

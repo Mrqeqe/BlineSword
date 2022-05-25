@@ -5,7 +5,9 @@ using UnityEditor;
 using SaveTools;
 public class PlayerData : MonoBehaviour
 { 
-    
+    /// <summary>
+    /// ³¡¾°±àºÅ
+    /// </summary>
     public int SenceNunber;
     public static PlayerData Instance { get; set; }
     private void Awake()
@@ -28,10 +30,14 @@ public class PlayerData : MonoBehaviour
     private DataList SavingData()
     {
         var saveData = new SaveData();
-        saveData.heartDemonScore    =      ScoringManager.Instance.UIScore.CurentHeartDemonSCore;
-        saveData.playerHealth       =   ScoringManager.Instance.UIScore.CurentPlayerHealth;
-        saveData.swordHeartScore     =   ScoringManager.Instance.UIScore.CurentSwordHeartScore;
-        saveData.numOfHits          =   ScoringManager.Instance.UIScore.NumOfHits;
+      
+
+            saveData.heartDemonScore     = ScoringManager.Instance.UIScore.CurentHeartDemonSCore;
+            saveData.playerHealth        = ScoringManager.Instance.UIScore.CurentPlayerHealth;
+            saveData.swordHeartScore     = ScoringManager.Instance.UIScore.CurentSwordHeartScore;
+            saveData.numOfHits           = ScoringManager.Instance.UIScore.NumOfHits;
+            saveData.playerScore         = ScoringManager.Instance.UIScore.PlayerScore;
+        
 
         DataList  datalist= LoadFromJson();
         if(datalist == null)
