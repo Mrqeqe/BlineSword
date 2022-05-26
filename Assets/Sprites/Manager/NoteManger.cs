@@ -100,7 +100,17 @@ public class NoteManger : MonoBehaviour
                 OnperfectBeat.Invoke(noteData);
                 PlayCorrespondAudio(noteData);
                 ScoringManager.Instance.UIScore.CurentSwordHeartScore +=  NoteScoreData.Instance.Score.perfectSwordHeartScore;
-                ScoringManager.Instance.UIScore.PlayerScore +=  NoteScoreData.Instance.Score.perfectBeatScore;
+                //分数
+                if (ScoringManager.Instance.UIScore.CurentSwordHeartScore >= ScoringManager.Instance.UIScore.SwordHeartScore)
+                {
+                    ScoringManager.Instance.UIScore.PlayerScore += NoteScoreData.Instance.Score.perfectBeatScore* NoteScoreData.Instance.Score.swordHeartPower;
+                }
+                else
+                {
+                    ScoringManager.Instance.UIScore.PlayerScore += NoteScoreData.Instance.Score.perfectBeatScore;
+                }
+        
+
                 ScoringManager.Instance.UpdateBatterAction();
                 DestroyCurentNote();
             }
@@ -109,7 +119,18 @@ public class NoteManger : MonoBehaviour
             {
                 PlayCorrespondAudio(noteData);
                 ScoringManager.Instance.UIScore.CurentSwordHeartScore +=  NoteScoreData.Instance.Score.normalSwordHeartScore;
+               
                 ScoringManager.Instance.UIScore.PlayerScore += NoteScoreData.Instance.Score.normalBeatScore;
+                //分数
+                if (ScoringManager.Instance.UIScore.CurentSwordHeartScore >= ScoringManager.Instance.UIScore.SwordHeartScore)
+                {
+                    ScoringManager.Instance.UIScore.PlayerScore += NoteScoreData.Instance.Score.normalBeatScore * NoteScoreData.Instance.Score.swordHeartPower;
+                }
+                else
+                {
+                    ScoringManager.Instance.UIScore.PlayerScore += NoteScoreData.Instance.Score.normalBeatScore;
+                }
+
                 ScoringManager.Instance.UpdateBatterAction();
                 DestroyCurentNote();
             }

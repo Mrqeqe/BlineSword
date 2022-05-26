@@ -11,6 +11,7 @@ public class UIScore : MonoBehaviour
     public Text PlayerScore_Text;
     public GameObject leaves;
     public GameObject potal;
+    public GameObject lotus;
     [Header("玩家血量")]
     [SerializeField]
     private float playerHealth;
@@ -42,6 +43,8 @@ public class UIScore : MonoBehaviour
     public int numToLeaves;
     [Header("出现花瓣的连击数")]
     public int numToPetal;
+    [Header("出现荷花的连击数")]
+    public int numOflotus;
 
     [Header("玩家得分")]
     [SerializeField]
@@ -227,6 +230,10 @@ public class UIScore : MonoBehaviour
         if(NumOfHits >= numToPetal)
         {
             potal.SetActive(true);
+        }
+        if(NumOfHits >= numOflotus)
+        {
+            lotus.SetActive(true);
         }
     }
 

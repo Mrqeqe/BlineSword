@@ -46,5 +46,9 @@ public class NoteScoreData : MonoBehaviour
         [Tooltip("心魔增加值")]
         [SerializeField]
         public float heartDemoScore = 10.0f;
+
+        [Tooltip("剑心分数倍率")]
+        [SerializeField]
+        public float swordHeartPower = 2.0f;
     }
 }
