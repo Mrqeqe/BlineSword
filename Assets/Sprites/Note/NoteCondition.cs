@@ -80,7 +80,7 @@ public class NoteCondition : MonoBehaviour
 
             if (myNoteData.NoteType != NoteManger.NoteType.DemonsNote)
             {
-                ScoringManager.Instance.UIScore.CurentPlayerHealth -= myNoteData.CutHealth;
+                ScoringManager.Instance.UIScore.CurentPlayerHealth -=NoteScoreData.Instance.Score.cutHealth;
             }
 
             ScoringManager.Instance.InteruptBatterAction();

@@ -88,19 +88,19 @@ public class NoteManger : MonoBehaviour
         {   
             if(noteData.NoteType == NoteType.DemonsNote)
             {
-               ScoringManager.Instance.UIScore.CurentHeartDemonSCore +=noteData.HeartDemoScore;
+               ScoringManager.Instance.UIScore.CurentHeartDemonSCore += NoteScoreData.Instance.Score.heartDemoScore;
                 ScoringManager.Instance.InteruptBatterAction();
                 Debug.Log("中招了");
                 DestroyCurentNote();
-                
+               
             }
             //完美判断
             else if (ScoringManager.Instance.IsNoteInPerfectAera(note))
             {
                 OnperfectBeat.Invoke(noteData);
                 PlayCorrespondAudio(noteData);
-                ScoringManager.Instance.UIScore.CurentSwordHeartScore += noteData.PerfectSwordHeartScore;
-                ScoringManager.Instance.UIScore.PlayerScore += noteData.PerfectBeatScore;
+                ScoringManager.Instance.UIScore.CurentSwordHeartScore +=  NoteScoreData.Instance.Score.perfectSwordHeartScore;
+                ScoringManager.Instance.UIScore.PlayerScore +=  NoteScoreData.Instance.Score.perfectBeatScore;
                 ScoringManager.Instance.UpdateBatterAction();
                 DestroyCurentNote();
             }
@@ -108,8 +108,8 @@ public class NoteManger : MonoBehaviour
             else if (ScoringManager.Instance.IsNoteInNormalAera(note))
             {
                 PlayCorrespondAudio(noteData);
-                ScoringManager.Instance.UIScore.CurentSwordHeartScore += noteData.NormalSwordHeartScore;
-                ScoringManager.Instance.UIScore.PlayerScore += noteData.NormalBeatScore;
+                ScoringManager.Instance.UIScore.CurentSwordHeartScore +=  NoteScoreData.Instance.Score.normalSwordHeartScore;
+                ScoringManager.Instance.UIScore.PlayerScore += NoteScoreData.Instance.Score.normalBeatScore;
                 ScoringManager.Instance.UpdateBatterAction();
                 DestroyCurentNote();
             }
@@ -119,7 +119,7 @@ public class NoteManger : MonoBehaviour
                 Debug.Log("Miss");
                 DestroyCurentNote();
                 ScoringManager.Instance.InteruptBatterAction();
-                ScoringManager.Instance.UIScore.CurentPlayerHealth -= noteData.CutHealth;
+                ScoringManager.Instance.UIScore.CurentPlayerHealth -= NoteScoreData.Instance.Score.cutHealth;
                 ScoringManager.Instance.InteruptBatterAction();
 
             }

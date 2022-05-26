@@ -60,31 +60,31 @@ public class Kore_EventNodeData : MonoBehaviour
     [SerializeField]
     private float transOutSpeed = 70.0f;
    
-    [Header("分数相关")]
+    //[Header("分数相关")]
 
-    [Tooltip("音符完美击败得分")]
-    [SerializeField]
-    private float perfectBeatScore = 10.0f;
+    //[Tooltip("音符完美击败得分")]
+    //[SerializeField]
+    //private float perfectBeatScore = 10.0f;
    
-    [Tooltip("音符普通击败得分")]
-    [SerializeField]
-    private float normalBeatScore = 5.0f;
+    //[Tooltip("音符普通击败得分")]
+    //[SerializeField]
+    //private float normalBeatScore = 5.0f;
    
-    [Tooltip("音符失败扣除血量")]
-    [SerializeField]
-    private float cutHealth = 10.0f;
+    //[Tooltip("音符失败扣除血量")]
+    //[SerializeField]
+    //private float cutHealth = 10.0f;
     
-    [Tooltip("音符完美剑心得分")]
-    [SerializeField]
-    private float perfectSwordHeartScore = 10.0f;
+    //[Tooltip("音符完美剑心得分")]
+    //[SerializeField]
+    //private float perfectSwordHeartScore = 10.0f;
    
-    [Tooltip("音符普通剑心得分")]
-    [SerializeField]
-    private float normalSwordHeartScore = 5.0f;
+    //[Tooltip("音符普通剑心得分")]
+    //[SerializeField]
+    //private float normalSwordHeartScore = 5.0f;
 
-    [Tooltip("心魔增加值")]
-    [SerializeField]
-    private float heartDemoScore =10.0f;
+    //[Tooltip("心魔增加值")]
+    //[SerializeField]
+    //private float heartDemoScore =10.0f;
     /// <summary>
     /// 生成位置
     /// </summary>
@@ -112,27 +112,27 @@ public class Kore_EventNodeData : MonoBehaviour
     /// <summary>
     /// 音符完美击败得分
     /// </summary>
-    public float PerfectBeatScore { get => perfectBeatScore; set => perfectBeatScore = value; }
-    /// <summary>
-    /// 音符普通击败得分
-    /// </summary>
-    public float NormalBeatScore { get => normalBeatScore; set => normalBeatScore = value; }
-    /// <summary>
-    /// 音符失败扣除血量
-    /// </summary>
-    public float CutHealth { get => cutHealth; set => cutHealth = value; }
-    /// <summary>
-    /// 音符完美剑心得分
-    /// </summary>
-    public float PerfectSwordHeartScore { get => perfectSwordHeartScore; set => perfectSwordHeartScore = value; }
-    /// <summary>
-    /// 音符普通剑心得分
-    /// </summary>
-    public float NormalSwordHeartScore { get => normalSwordHeartScore; set => normalSwordHeartScore = value; }
-    /// <summary>
-    /// 心魔音符分数
-    /// </summary>
-    public float HeartDemoScore { get => heartDemoScore; set => heartDemoScore = value; }
+    //public float PerfectBeatScore { get => perfectBeatScore; set => perfectBeatScore = value; }
+    ///// <summary>
+    ///// 音符普通击败得分
+    ///// </summary>
+    //public float NormalBeatScore { get => normalBeatScore; set => normalBeatScore = value; }
+    ///// <summary>
+    ///// 音符失败扣除血量
+    ///// </summary>
+    //public float CutHealth { get => cutHealth; set => cutHealth = value; }
+    ///// <summary>
+    ///// 音符完美剑心得分
+    ///// </summary>
+    //public float PerfectSwordHeartScore { get => perfectSwordHeartScore; set => perfectSwordHeartScore = value; }
+    ///// <summary>
+    ///// 音符普通剑心得分
+    ///// </summary>
+    //public float NormalSwordHeartScore { get => normalSwordHeartScore; set => normalSwordHeartScore = value; }
+    ///// <summary>
+    ///// 心魔音符分数
+    ///// </summary>
+    //public float HeartDemoScore { get => heartDemoScore; set => heartDemoScore = value; }
     /// <summary>
     /// 音效种类
     /// </summary>
