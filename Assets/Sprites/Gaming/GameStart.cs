@@ -15,10 +15,12 @@ public class GameStart : MonoBehaviour
     private int startTime=3;
     public Text startTimeText;
     private bool isGameStart = false;
+    public string startVideoName;
+    public string endVideoName;
     void Start()
     {
-
-       
+        VideoName.Start = startVideoName;
+        VideoName.End = endVideoName;
 
     }
     private bool startVideo =true;

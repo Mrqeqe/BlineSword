@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class VideoName : MonoBehaviour
 {
-   public static string Start { get => "start"; }
-   public static string End { get => "end"; }
+    private static string _start = "start";
+    public static string Start { get { return _start; }set { _start = value; } }
+    private static string _end = "end";
+   public static string End { get { return _end ; } set { _end = value; } }
 }

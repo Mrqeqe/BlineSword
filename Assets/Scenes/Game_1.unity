@@ -78460,6 +78460,8 @@ MonoBehaviour:
   GameEnd: {fileID: 1459122306}
   markedWords: {fileID: 996132788}
   startTimeText: {fileID: 2082050951}
+  startVideoName: end
+  endVideoName: start
 --- !u!4 &1749206097
 Transform:
   m_ObjectHideFlags: 0
@@ -134212,7 +134214,7 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 459, y: 0.000022888184}
   m_SizeDelta: {x: 749.596, y: -0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -134437,7 +134439,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -0.0000019073486, y: 34.5}
   m_SizeDelta: {x: 25.437, y: 81.734}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -134829,7 +134831,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!223 &2154651251926493026
 Canvas:
   m_ObjectHideFlags: 0
@@ -135003,7 +135005,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -2.4, y: -2}
   m_SizeDelta: {x: 503.641, y: 424.507}
   m_Pivot: {x: 0.5, y: 0.5}
