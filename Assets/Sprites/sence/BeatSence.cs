@@ -7,6 +7,7 @@ public class BeatSence : MonoBehaviour
 
     public static BeatSence Instance { get; set; }
     private bool isShaking=false;
+    Vector3 orginTrans;
     private void Awake()
     {
         if(Instance !=null)
@@ -20,7 +21,7 @@ public class BeatSence : MonoBehaviour
     }
     void Start()
     {
-        
+        orginTrans = Camera.main.transform.position;
     }
 
     // Update is called once per frame
@@ -41,13 +42,14 @@ public class BeatSence : MonoBehaviour
     {
         isShaking = true;
         Transform camera = Camera.main.transform;
-        Vector3 orginPostion = camera.position;
+        
         while(duration >0)
         {
-            camera.position = Random.insideUnitSphere * strength + orginPostion;
+            camera.position = Random.insideUnitSphere * strength + orginTrans;
             duration -= Time.deltaTime;
             yield return null;
         }
-        isShaking = false;
+        camera.position = orginTrans;
+       isShaking = false;
     }
 }

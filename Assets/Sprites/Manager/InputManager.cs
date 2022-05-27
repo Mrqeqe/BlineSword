@@ -16,14 +16,14 @@ public class InputManager : MonoBehaviour
     /// </summary>
     public  enum PlayerInput
     {
-        E,
-        R,
-        U,
-        I,
-        D,
-        F,
-        J,
-        K
+        r1,
+        r2,
+        l1,
+        l2,
+        r3,
+        r4,
+        l3,
+        l4
     }
 
     /// <summary>
@@ -112,37 +112,37 @@ public class InputManager : MonoBehaviour
         //}
         #endregion
        
-       if(Input.GetKeyDown(KeyCode.E))
+       if(Input.GetKeyDown(KeyCode.W))
         {
-            playerInput = PlayerInput.E;
-            OnKeyPassed.Invoke(playerInput);
-        }if(Input.GetKeyDown(KeyCode.R))
-        {
-            playerInput = PlayerInput.R;
-            OnKeyPassed.Invoke(playerInput);
-        }if(Input.GetKeyDown(KeyCode.U))
-        {
-            playerInput = PlayerInput.U;
-            OnKeyPassed.Invoke(playerInput);
-        }if(Input.GetKeyDown(KeyCode.I))
-        {
-            playerInput = PlayerInput.I;
+            playerInput = PlayerInput.r1;
             OnKeyPassed.Invoke(playerInput);
         }if(Input.GetKeyDown(KeyCode.D))
         {
-            playerInput = PlayerInput.D;
+            playerInput = PlayerInput.r2;
             OnKeyPassed.Invoke(playerInput);
-        }if(Input.GetKeyDown(KeyCode.F))
+        }if(Input.GetKeyDown(KeyCode.UpArrow))
         {
-            playerInput = PlayerInput.F;
+            playerInput = PlayerInput.l1;
             OnKeyPassed.Invoke(playerInput);
-        }if(Input.GetKeyDown(KeyCode.J))
+        }if(Input.GetKeyDown(KeyCode.RightArrow))
         {
-            playerInput = PlayerInput.J;
+            playerInput = PlayerInput.l2;
             OnKeyPassed.Invoke(playerInput);
-        }if(Input.GetKeyDown(KeyCode.K))
+        }if(Input.GetKeyDown(KeyCode.A))
         {
-            playerInput = PlayerInput.K;
+            playerInput = PlayerInput.r3;
+            OnKeyPassed.Invoke(playerInput);
+        }if(Input.GetKeyDown(KeyCode.S))
+        {
+            playerInput = PlayerInput.r4;
+            OnKeyPassed.Invoke(playerInput);
+        }if(Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            playerInput = PlayerInput.l3;
+            OnKeyPassed.Invoke(playerInput);
+        }if(Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            playerInput = PlayerInput.l4;
             OnKeyPassed.Invoke(playerInput);
         }
     }

@@ -9,6 +9,8 @@ public class ScoringManager : MonoBehaviour
     public float perfectJudgmentRange = 2.0f;
     [Header("普通判定范围线（绿）")]
     public float normalJugmentRange = 3.0f;
+    [Header ("判定偏移量")]
+    public float offestJugmentRange = 0.1f;
     [Header("判定区域背景开启/关闭")]
     public bool ShowBackground =true;
     [Header("UIScore对象")]
@@ -92,7 +94,7 @@ public class ScoringManager : MonoBehaviour
     public bool IsNoteInPerfectAera(GameObject currentNote)
     {
         Control myControl = currentNote.GetComponent<Control>();
-        if (myControl.cirqueRadius <= perfectJudgmentRange)
+        if (myControl.cirqueRadius <= perfectJudgmentRange+ offestJugmentRange)
         {
             return true;
         }
@@ -112,7 +114,7 @@ public class ScoringManager : MonoBehaviour
     {
         
         Control myControl = currentNote.GetComponent<Control>();
-        if (myControl.cirqueRadius > perfectJudgmentRange && myControl.cirqueRadius < normalJugmentRange)
+        if (myControl.cirqueRadius > perfectJudgmentRange && myControl.cirqueRadius < normalJugmentRange+ offestJugmentRange)
         {
             return true;
         }
@@ -131,12 +133,12 @@ public class ScoringManager : MonoBehaviour
         if(leftPoint!=null&&rightPoint!=null)
         {
             Gizmos.color = Color.blue;
-            Gizmos.DrawWireSphere(rightPoint.position, perfectJudgmentRange);
-            Gizmos.DrawWireSphere(leftPoint.position, perfectJudgmentRange);
+            Gizmos.DrawWireSphere(rightPoint.position, perfectJudgmentRange+ offestJugmentRange);
+            Gizmos.DrawWireSphere(leftPoint.position, perfectJudgmentRange + offestJugmentRange);
 
             Gizmos.color = Color.green;
-            Gizmos.DrawWireSphere(leftPoint.position, normalJugmentRange);
-            Gizmos.DrawWireSphere(rightPoint.position, normalJugmentRange);
+            Gizmos.DrawWireSphere(leftPoint.position, normalJugmentRange + offestJugmentRange);
+            Gizmos.DrawWireSphere(rightPoint.position, normalJugmentRange + offestJugmentRange);
         }
         else
         {
