@@ -17,16 +17,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game_2.unity
     guid: 466018360c832184ab70107390578f3f
-  - enabled: 0
-    path: Assets/Scenes/Game_3.unity
-    guid: da54f27b44a324c44ac0c4dffab806ed
-  - enabled: 0
-    path: Assets/Scenes/Game_4.unity
-    guid: 7d6086a9373028a4db84c3371f7c04e6
-  - enabled: 0
-    path: Assets/Scenes/Game_5.unity
-    guid: 59f6464f3b9b18e43a8d17bbad607659
-  - enabled: 0
-    path: Assets/Scenes/MadePrefabs.unity
-    guid: 68eb3b2b7517b364195538e26ce9d775
   m_configObjects: {}

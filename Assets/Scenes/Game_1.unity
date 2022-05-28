@@ -40396,63 +40396,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!1001 &598695354
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6131481666867221891, guid: be5d73a0ec4c43c4a93ce49f8abff9ee, type: 3}
-      propertyPath: m_RootOrder
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 6131481666867221891, guid: be5d73a0ec4c43c4a93ce49f8abff9ee, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6131481666867221891, guid: be5d73a0ec4c43c4a93ce49f8abff9ee, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6131481666867221891, guid: be5d73a0ec4c43c4a93ce49f8abff9ee, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6131481666867221891, guid: be5d73a0ec4c43c4a93ce49f8abff9ee, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6131481666867221891, guid: be5d73a0ec4c43c4a93ce49f8abff9ee, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6131481666867221891, guid: be5d73a0ec4c43c4a93ce49f8abff9ee, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6131481666867221891, guid: be5d73a0ec4c43c4a93ce49f8abff9ee, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6131481666867221891, guid: be5d73a0ec4c43c4a93ce49f8abff9ee, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6131481666867221891, guid: be5d73a0ec4c43c4a93ce49f8abff9ee, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6131481666867221891, guid: be5d73a0ec4c43c4a93ce49f8abff9ee, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6408989511430305847, guid: be5d73a0ec4c43c4a93ce49f8abff9ee, type: 3}
-      propertyPath: m_Name
-      value: CreateMangprefabs
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: be5d73a0ec4c43c4a93ce49f8abff9ee, type: 3}
 --- !u!1 &611742556
 GameObject:
   m_ObjectHideFlags: 0
@@ -134900,6 +134843,7 @@ MonoBehaviour:
   curentPlayerHealth: 500
   swordHeartScore: 100
   curentSwordHeartScore: 0
+  SwordTime: 10
   heartDemonScore: 30
   curentHeartDemonSCore: 0
   numOfHits: 0
@@ -135104,7 +135048,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3913982542500563451, guid: 69cd88807cc32d84f8ea3877d827b1fb, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 3913982542500563451, guid: 69cd88807cc32d84f8ea3877d827b1fb, type: 3}
       propertyPath: m_LocalPosition.x

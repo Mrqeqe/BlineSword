@@ -80,7 +80,7 @@ public class PlayerData : MonoBehaviour
 
         return saveData;
     }
-    [MenuItem("CustomerTools/delet Player Data")]
+    //[MenuItem("CustomerTools/delet Player Data")]
     public static void  DeletData()
     {
         SaveSystem.DeleteSaveFile(PLAYER_DATA_FILE_NAME);

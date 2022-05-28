@@ -23,7 +23,7 @@ public class ShowPlayerData : MonoBehaviour
         }
         catch(System.Exception e)
         {
-            Debug.LogWarning("存档列表为空");
+            Debug.LogWarning("存档列表为空"+e);
             swordHeartText.text = "剑心：无数据";
             scoreText.text      = "得分：无数据";
             heartDemo.text      = "心魔：无数据";

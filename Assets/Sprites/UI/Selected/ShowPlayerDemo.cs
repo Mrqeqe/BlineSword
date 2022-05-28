@@ -16,7 +16,7 @@ public class ShowPlayerDemo : MonoBehaviour
         }
         catch(System.Exception e)
         {
-            Debug.Log("�޴浵");
+            Debug.Log("�޴浵"+e);
         }
     }
 

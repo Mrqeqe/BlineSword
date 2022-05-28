@@ -27,7 +27,8 @@ public class UIScore : MonoBehaviour
     [Header("当前剑心值")]
     [SerializeField]
     private float curentSwordHeartScore;
-   
+
+    public float SwordTime = 10.0f;
     [Header("心魔值")]
     [SerializeField]
     private float heartDemonScore;
@@ -135,6 +136,7 @@ public class UIScore : MonoBehaviour
     /// </summary>
     private void PlayerHealthUpdate()
     {
+        Debug.Log("currentSword" + curentSwordHeartScore);
         Animator hpAnim = HP_slider.transform.GetChild(1).GetChild(0).GetComponent<Animator>();
         //TODO：更新玩家生命值
        HP_slider.value = CurentPlayerHealth;
@@ -169,6 +171,13 @@ public class UIScore : MonoBehaviour
             SH_Anim.SetBool("ScabbardFalled", true);
             SH_Anim.SetBool("ScabbardBackToIdel", false);
             SH_Anim.SetBool("ScabbardBack", false);
+            //-1是减去动画时间
+            if (SHToZero)
+            {
+                Invoke("SwordHeartToZero", SwordTime - 1);
+                SHToZero = false;
+            }
+          
         }
         if(curentSwordHeartScore<SwordHeartScore)
         {
@@ -180,6 +189,14 @@ public class UIScore : MonoBehaviour
         }
         
     }
+    private bool SHToZero = true;
+    public void SwordHeartToZero()
+    {
+        
+            curentSwordHeartScore = 0.9f * SwordHeartScore;
+            SHToZero = true;  
+    }
+ 
     /// <summary>
     /// 更新心魔值
     /// </summary>

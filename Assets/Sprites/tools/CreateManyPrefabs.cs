@@ -6,32 +6,32 @@ using System.IO;
 public class CreateManyPrefabs 
 {
     // Start is called before the first frame update
-    [MenuItem("CustomerTools/Create Prefab")]
-    static void CreatePrefab()
-    {
-        // Keep track of the currently selected GameObject(s)
-        GameObject[] objectArray = Selection.gameObjects;
+   // [MenuItem("CustomerTools/Create Prefab")]
+    //static void createprefab()
+    //{
+    //    // keep track of the currently selected gameobject(s)
+    //    gameobject[] objectarray = selection.gameobjects;
 
-        // Loop through every GameObject in the array above
-        foreach (GameObject gameObject in objectArray)
-        {
-            // Create folder Prefabs and set the path as within the Prefabs folder,
-            // and name it as the GameObject's name with the .Prefab format
-            if (!Directory.Exists("Assets/Prefabs"))
-                AssetDatabase.CreateFolder("Assets", "Prefabs");
-            string localPath = "Assets/Prefabs/" + gameObject.name + ".prefab";
+    //    // loop through every gameobject in the array above
+    //    foreach (gameobject gameobject in objectarray)
+    //    {
+    //        // create folder prefabs and set the path as within the prefabs folder,
+    //        // and name it as the gameobject's name with the .prefab format
+    //        if (!directory.exists("assets/prefabs"))
+    //            assetdatabase.createfolder("assets", "prefabs");
+    //        string localpath = "assets/prefabs/" + gameobject.name + ".prefab";
 
-            // Make sure the file name is unique, in case an existing Prefab has the same name.
-            localPath = AssetDatabase.GenerateUniqueAssetPath(localPath);
+    //        // make sure the file name is unique, in case an existing prefab has the same name.
+    //        localpath = assetdatabase.generateuniqueassetpath(localpath);
 
-            // Create the new Prefab and log whether Prefab was saved successfully.
-            bool prefabSuccess;
-            PrefabUtility.SaveAsPrefabAsset(gameObject, localPath, out prefabSuccess);
-            if (prefabSuccess == true)
-                Debug.Log("Prefab was saved successfully");
-            else
-                Debug.Log("Prefab failed to save" + prefabSuccess);
-        }
-    }
+    //        // create the new prefab and log whether prefab was saved successfully.
+    //        bool prefabsuccess;
+    //        prefabutility.saveasprefabasset(gameobject, localpath, out prefabsuccess);
+    //        if (prefabsuccess == true)
+    //            debug.log("prefab was saved successfully");
+    //        else
+    //            debug.log("prefab failed to save" + prefabsuccess);
+    //    }
+    //}
 
 }
