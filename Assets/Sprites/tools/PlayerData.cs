@@ -35,7 +35,7 @@ public class PlayerData : MonoBehaviour
             saveData.heartDemonScore     = ScoringManager.Instance.UIScore.CurentHeartDemonSCore;
             saveData.playerHealth        = ScoringManager.Instance.UIScore.CurentPlayerHealth;
             saveData.swordHeartScore     = ScoringManager.Instance.UIScore.CurentSwordHeartScore;
-            saveData.numOfHits           = ScoringManager.Instance.UIScore.NumOfHits;
+            saveData.maxNumOfHits           = ScoringManager.Instance.UIScore.maxNumOdHits;
             saveData.playerScore         = ScoringManager.Instance.UIScore.PlayerScore;
         
 
@@ -111,7 +111,7 @@ public class SaveData
 
     [Header("连击数")]
     [SerializeField]
-    public int numOfHits;
+    public int maxNumOfHits;
 
     [Header("玩家得分")]
     [SerializeField]

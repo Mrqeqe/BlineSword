@@ -56484,7 +56484,7 @@ MonoBehaviour:
   leftPoint: {fileID: 400554896}
   perfectJudgmentRange: 0.2
   normalJugmentRange: 0.4
-  offestJugmentRange: 0.1
+  offestJugmentRange: 0.2
   ShowBackground: 0
   UIScore: {fileID: 2154651251926493028}
   OpeanShake: 1
@@ -56717,7 +56717,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sharedProfile: {fileID: 11400000, guid: b7d5ce3891b18f244bbb86dad8070ad4, type: 2}
-  isGlobal: 0
+  isGlobal: 1
   blendDistance: 0
   weight: 1
   priority: 0
@@ -56739,7 +56739,7 @@ MonoBehaviour:
     m_Bits: 64
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
-  antialiasingMode: 0
+  antialiasingMode: 2
   temporalAntialiasing:
     jitterSpread: 0.75
     sharpness: 0.25
@@ -56776,7 +56776,7 @@ MonoBehaviour:
       colorBlindnessStrength: 1
   m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
   m_ShowToolkit: 0
-  m_ShowCustomSorter: 1
+  m_ShowCustomSorter: 0
   breakBeforeColorGrading: 0
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
@@ -78461,8 +78461,8 @@ MonoBehaviour:
   GameEnd: {fileID: 1459122306}
   markedWords: {fileID: 996132788}
   startTimeText: {fileID: 2082050951}
-  startVideoName: end
-  endVideoName: start
+  startVideoName: firstLevelStart
+  endVideoName: firstLevelEnd
 --- !u!4 &1749206097
 Transform:
   m_ObjectHideFlags: 0
@@ -88699,9 +88699,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   videoItems:
-  - videoClip: {fileID: 32900000, guid: 05f4e351d4da722428c6fad96e0dc9ae, type: 3}
+  - videoClip: {fileID: 32900000, guid: 009be7df326390b4c964381fff7a37e9, type: 3}
     videoPlayer: {fileID: 1798954777}
-  - videoClip: {fileID: 32900000, guid: 4b5e48a15570dfd47be05caeddc8fc16, type: 3}
+  - videoClip: {fileID: 32900000, guid: 5fb0acae8dbff514ca99f80cd6985d8a, type: 3}
     videoPlayer: {fileID: 1798954777}
 --- !u!95 &1798954781
 Animator:
@@ -134896,8 +134896,8 @@ MonoBehaviour:
   leaves: {fileID: 705534858}
   potal: {fileID: 1564360920695503734}
   lotus: {fileID: 177865120}
-  playerHealth: 250
-  curentPlayerHealth: 250
+  playerHealth: 500
+  curentPlayerHealth: 500
   swordHeartScore: 100
   curentSwordHeartScore: 0
   heartDemonScore: 30
@@ -134907,6 +134907,7 @@ MonoBehaviour:
   numToPetal: 80
   numOflotus: 129
   playerScore: 0
+  maxNumOdHits: 0
 --- !u!224 &2154651251926493053
 RectTransform:
   m_ObjectHideFlags: 0

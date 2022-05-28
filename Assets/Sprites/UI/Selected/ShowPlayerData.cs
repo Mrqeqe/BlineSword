@@ -46,7 +46,7 @@ public class ShowPlayerData : MonoBehaviour
                 swordHeartText.text  = "剑心：" + saveData[autoCenterView.curCenterChildIndex].swordHeartScore;
                 scoreText.text       = "得分：" + saveData[autoCenterView.curCenterChildIndex].playerScore;
                 heartDemo.text       = "心魔：" + saveData[autoCenterView.curCenterChildIndex].heartDemonScore;
-                numOfHits.text       = "连击：" + saveData[autoCenterView.curCenterChildIndex].numOfHits;
+                numOfHits.text       = "连击：" + saveData[autoCenterView.curCenterChildIndex].maxNumOfHits;
             }
             else
             {

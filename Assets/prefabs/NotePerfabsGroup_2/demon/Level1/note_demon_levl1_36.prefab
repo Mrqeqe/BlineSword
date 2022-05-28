@@ -14628,7 +14628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e05a1657e583ed640820c5c10d29d2dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteInsPostion: 5
+  noteInsPostion: 6
   noteType: 1
   sfxType: 0
   noteTone: 0
@@ -14639,12 +14639,6 @@ MonoBehaviour:
   transLineOut: 0.86
   transInSpeed: 50
   transOutSpeed: 70
-  perfectBeatScore: 10
-  normalBeatScore: 5
-  cutHealth: 10
-  perfectSwordHeartScore: 10
-  normalSwordHeartScore: 5
-  heartDemoScore: 10
 --- !u!114 &393391221236557349
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -87,6 +87,7 @@ public class UIScore : MonoBehaviour
     /// </summary>
     public float PlayerScore { get => playerScore; set => playerScore = value; }
 
+    public int maxNumOdHits = 0;
 
     private void Start()
     {
@@ -186,12 +187,13 @@ public class UIScore : MonoBehaviour
     {
         Animator demoAnim = DemoMask_Image.transform.GetChild(1).GetComponent<Animator>(); 
         //TODO:更新心魔值
-        if (3*CurentHeartDemonSCore>heartDemonScore && 3 * CurentHeartDemonSCore <2*heartDemonScore)
+        if (3*CurentHeartDemonSCore>=2*heartDemonScore &&  CurentHeartDemonSCore <heartDemonScore)
         {
+            Debug.Log("半眼");
             demoAnim.SetBool("HalfHiddenEyes", true);
             demoAnim.SetBool("OpeanEyes", false);
         }
-        else if(3 * CurentHeartDemonSCore > 2 * heartDemonScore)
+        else if( CurentHeartDemonSCore >=  heartDemonScore)
         {
             demoAnim.SetBool("OpeanEyes", true);
             demoAnim.SetBool("HalfHiddenEyes", false);
@@ -212,7 +214,10 @@ public class UIScore : MonoBehaviour
         float speed = 0.01f;
 
         Camera MainCam = this.gameObject.GetComponent<Canvas>().worldCamera;
-
+        if (maxNumOdHits < NumOfHits)
+        {
+            maxNumOdHits = NumOfHits;
+        }
         
         if (NumOfHits >=2 &&NumOfHits>curentNumOfhits)
         {

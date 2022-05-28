@@ -35,7 +35,7 @@ public class ScoringManager : MonoBehaviour
     [Header("HitÆÁÄ»Õğ¶¯·ù¶È")]
     [Range(0, 1)]
     public float hitShakeStrength = 0.5f;
-
+   
     public Transform[] InsNoteTransList;
     /// <summary>
     /// µ¥Àı

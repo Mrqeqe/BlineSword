@@ -14633,18 +14633,12 @@ MonoBehaviour:
   sfxType: 2
   noteTone: 0
   noteWithShinkSpeed: 1
-  noteSpeed: 2.5
+  noteSpeed: 2.2
   isFeadOut: 0
   transLineIn: 2
   transLineOut: 0.86
   transInSpeed: 50
   transOutSpeed: 70
-  perfectBeatScore: 200
-  normalBeatScore: 150
-  cutHealth: 40
-  perfectSwordHeartScore: 400
-  normalSwordHeartScore: 300
-  heartDemoScore: 10
 --- !u!114 &393391221236557349
 MonoBehaviour:
   m_ObjectHideFlags: 0
