@@ -14639,12 +14639,6 @@ MonoBehaviour:
   transLineOut: 0.86
   transInSpeed: 50
   transOutSpeed: 70
-  perfectBeatScore: 10
-  normalBeatScore: 5
-  cutHealth: 10
-  perfectSwordHeartScore: 10
-  normalSwordHeartScore: 5
-  heartDemoScore: 10
 --- !u!114 &393391221236557349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14912,7 +14906,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9d10b528f943a254eb1195d82ddd7f28, type: 2}
+  - {fileID: 2100000, guid: 3d75ab1cc45377e4e9ea551be8fa314a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15007,7 +15001,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cb096f583fdbd4f4691096d40e11c707, type: 2}
+  - {fileID: 2100000, guid: 125239fddbda39746b38681f8669e219, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

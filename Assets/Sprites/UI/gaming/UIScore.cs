@@ -243,7 +243,7 @@ public class UIScore : MonoBehaviour
             
             curentNumOfhits = numOfHits;
            // Debug.Log(Mathf.Clamp(V + NumOfHits * speed, 0.0f, 0.69f));
-           MainCam.backgroundColor = Color.HSVToRGB(0.0f, 0.0f, Mathf.Clamp(V + speed, 0.0f, 0.69f)); 
+           MainCam.backgroundColor = Color.HSVToRGB(0.0f, 0.0f, Mathf.Clamp(V + speed, 0.0f, 0.5f)); 
         }
         if(NumOfHits >=numToLeaves)
         {

@@ -133990,6 +133990,7 @@ GameObject:
   - component: {fileID: 2154651250766624854}
   - component: {fileID: 2154651250766624855}
   - component: {fileID: 2154651250766624849}
+  - component: {fileID: 2154651250766624856}
   m_Layer: 5
   m_Name: scabbard
   m_TagString: Untagged
@@ -134035,6 +134036,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2154651250766624856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2154651250766624853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30c3930825f9d804dafbfd266cdb6ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &2154651250776908898
 RectTransform:
   m_ObjectHideFlags: 0
@@ -134843,6 +134856,7 @@ MonoBehaviour:
   curentPlayerHealth: 500
   swordHeartScore: 100
   curentSwordHeartScore: 0
+  SwordTime: 10
   heartDemonScore: 30
   curentHeartDemonSCore: 0
   numOfHits: 0
