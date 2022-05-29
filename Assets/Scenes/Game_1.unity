@@ -88642,9 +88642,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   videoItems:
-  - videoClip: {fileID: 32900000, guid: 009be7df326390b4c964381fff7a37e9, type: 3}
+  - videoClip: {fileID: 32900000, guid: 5097bb2f1c2976f4ab96d3fa0b6380b7, type: 3}
     videoPlayer: {fileID: 1798954777}
-  - videoClip: {fileID: 32900000, guid: 5fb0acae8dbff514ca99f80cd6985d8a, type: 3}
+  - videoClip: {fileID: 32900000, guid: 54be06142041545458113669d2cbde8a, type: 3}
     videoPlayer: {fileID: 1798954777}
 --- !u!95 &1798954781
 Animator:
